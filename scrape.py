@@ -180,16 +180,62 @@ def ruten_search_ids(pages=2, per=100):
     return ids
 
 
+def _from_rapi(x):
+    imgs = (x.get("images") or {}).get("url") or []
+    return {
+        "id": str(x.get("id")),
+        "name": x.get("name") or "",
+        "cate": str(x.get("class") or ""),
+        "price": int(x.get("goods_price") or 0),
+        "img": imgs[0] if imgs else "",
+        "in_stock": x.get("available") not in (False, 0),
+        "store": (x.get("store_name") or "")[:20],
+    }
+
+
+def _from_rtapi(x):
+    img = x.get("Image") or ""
+    if img and not img.startswith("http"):
+        img = "https://gcs.rimg.com.tw" + img
+    img = re.sub(r"_m\.(jpg|png|webp)$", r"_b.\1", img, flags=re.I)
+    pr = x.get("PriceRange") or [0]
+    return {
+        "id": str(x.get("ProdId")),
+        "name": x.get("ProdName") or "",
+        "cate": str(x.get("CateId") or ""),
+        "price": int(pr[0] or 0),
+        "img": img,
+        "in_stock": int(x.get("StockQty") or 0) > 0,
+        "store": "",
+    }
+
+
 def ruten_details(ids, chunk=30):
-    out = []
+    """優先用 rapi（含賣家名稱、上架狀態），失敗才退回 rtapi。"""
+    out, missing = [], []
     for i in range(0, len(ids), chunk):
-        batch = ",".join(ids[i:i + chunk])
+        batch = ids[i:i + chunk]
+        try:
+            url = ("https://rapi.ruten.com.tw/api/items/v2/list"
+                   f"?gno={','.join(batch)}&level=simple")
+            r = SESSION.get(url, timeout=30, headers={"Referer": "https://www.ruten.com.tw/"})
+            r.raise_for_status()
+            rows = (r.json() or {}).get("data") or []
+            if not rows:
+                raise ValueError("rapi 無資料")
+            out.extend(_from_rapi(x) for x in rows)
+        except Exception:
+            missing.extend(batch)
+        time.sleep(0.3)
+
+    for i in range(0, len(missing), chunk):
+        batch = ",".join(missing[i:i + chunk])
         url = f"https://rtapi.ruten.com.tw/api/prod/v2/index.php/prod?id={batch}"
         r = SESSION.get(url, timeout=30, headers={"Referer": "https://www.ruten.com.tw/"})
         r.raise_for_status()
         data = r.json()
         if isinstance(data, list):
-            out.extend(data)
+            out.extend(_from_rtapi(x) for x in data)
         time.sleep(0.3)
     return out
 
@@ -198,34 +244,28 @@ def scrape_ruten():
     raw = ruten_details(ruten_search_ids())
     items = []
     for x in raw:
-        title = norm_ws(x.get("ProdName"))
+        title = norm_ws(x["name"])
         if not title or ACCESSORY.search(title) or JUNK.search(title) or NOT_A_PHONE.search(title):
             continue
-        if not str(x.get("CateId") or "").startswith(RUTEN_USED_PHONE_CATE):
+        if not x["cate"].startswith(RUTEN_USED_PHONE_CATE):
             continue
-        if int(x.get("StockQty") or 0) <= 0:
+        if not x["in_stock"]:
             continue
-        pr = x.get("PriceRange") or [0]
-        price = int(pr[0] or 0)
-        if not (PRICE_MIN <= price <= PRICE_MAX):
+        if not (PRICE_MIN <= x["price"] <= PRICE_MAX):
             continue
         v = classify(title)
         if not v:
             continue
-        img = x.get("Image") or ""
-        if img and not img.startswith("http"):
-            img = "https://gcs.rimg.com.tw" + img
-        img = re.sub(r"_m\.(jpg|png|webp)$", r"_b.\1", img, flags=re.I)
         items.append({
             "t": title[:60],
-            "p": price,
+            "p": x["price"],
             "v": v,
             "c": capacity(title),
             "b": battery(title),
             "g": condition(title),
-            "i": img,
-            "u": f"https://www.ruten.com.tw/item/show?{x.get('ProdId')}",
-            "s": "",
+            "i": x["img"],
+            "u": f"https://www.ruten.com.tw/item/show?{x['id']}",
+            "s": x["store"],
             "src": "露天市集",
         })
     return items
@@ -308,10 +348,35 @@ SOGI_ROW = re.compile(
     r"Apple\s+(iPhone[^$]{0,26}?)\s*門市最低\s*\$?([\d,]+|-)\s*二手價\s*\$?([\d,]+|-)")
 
 
+SOGI_HEADERS = {
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "zh-TW,zh;q=0.9",
+    "Referer": "https://www.sogi.com.tw/",
+    "Upgrade-Insecure-Requests": "1",
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "same-origin",
+    "Sec-Fetch-User": "?1",
+}
+
+
 def scrape_sogi():
-    """回傳 {機型: {容量或 "*": {used, retail}}}。SOGI 對部分機型會分容量列出。"""
-    r = SESSION.get(SOGI_URL, timeout=30)
-    r.raise_for_status()
+    """回傳 {機型: {容量或 "*": {used, retail}}}。SOGI 對部分機型會分容量列出。
+
+    注意：SOGI 會擋部分機房 IP，在 GitHub Actions 上可能回 403/405。
+    抓不到時 main() 會沿用 data.json 裡既有的基準值，不會清空。
+    """
+    last = None
+    for attempt in range(2):
+        try:
+            r = SESSION.get(SOGI_URL, timeout=30, headers=SOGI_HEADERS)
+            r.raise_for_status()
+            break
+        except Exception as e:
+            last = e
+            time.sleep(2)
+    else:
+        raise last
     text = re.sub(r"\s+", " ", BeautifulSoup(r.text, "html.parser").get_text(" "))
     out = {}
     for m in SOGI_ROW.finditer(text):
@@ -360,7 +425,9 @@ def main():
 
     seen, uniq = set(), []
     for it in sorted(items, key=lambda x: x["p"]):
-        key = (it["v"], it["c"], it["p"], it["s"])
+        # 同機型＋同容量＋同價格＋同標題開頭才算重複；只靠賣家名稱會把
+        # 不同賣家的相同規格誤判成同一筆（備援來源拿不到賣家名稱時尤其嚴重）
+        key = (it["v"], it["c"], it["p"], norm_ws(it["t"])[:24])
         if key in seen:
             continue
         seen.add(key)
@@ -390,6 +457,10 @@ def main():
         "errors": errors,
     }
     OUT.write_text(json.dumps(payload, ensure_ascii=False, indent=1), encoding="utf-8")
+    if not benchmarks:
+        print("提醒：這次沒有任何行情基準，「低於行情」標籤不會顯示。", flush=True)
+    elif any(e.startswith("SOGI") for e in errors):
+        print("提醒：SOGI 這次抓不到，行情基準沿用上一次的數值。", flush=True)
     print(f"寫入 {OUT.name}：{len(uniq)} 件，最低 ${uniq[0]['p']:,}", flush=True)
 
 
