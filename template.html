@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>html{color-scheme:light dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>二手 iPhone 16 行情看板</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+:root{
+  --ground:#EEF1F5;
+  --surface:#FFFFFF;
+  --surface-2:#F7F9FB;
+  --line:#DCE2EA;
+  --line-soft:#E9EDF2;
+  --ink:#162231;
+  --ink-2:#4B5A6B;
+  --ink-3:#7C8B9C;
+  --accent:#0B5FC1;
+  --accent-soft:#E7F0FC;
+  --good:#0A7A55;
+  --good-soft:#E2F3EC;
+  --warn:#9A4A11;
+  --warn-soft:#FBEDE2;
+  --shadow:0 1px 2px rgba(22,34,49,.05);
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0D1218;
+    --surface:#151C24;
+    --surface-2:#1B242E;
+    --line:#28323E;
+    --line-soft:#212B35;
+    --ink:#E8EEF5;
+    --ink-2:#A9B7C6;
+    --ink-3:#7C8B9C;
+    --accent:#6BA8FF;
+    --accent-soft:#15293F;
+    --good:#4FC79B;
+    --good-soft:#12301F;
+    --warn:#E8A46A;
+    --warn-soft:#33231A;
+    --shadow:0 1px 2px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0D1218; --surface:#151C24; --surface-2:#1B242E;
+  --line:#28323E; --line-soft:#212B35;
+  --ink:#E8EEF5; --ink-2:#A9B7C6; --ink-3:#7C8B9C;
+  --accent:#6BA8FF; --accent-soft:#15293F;
+  --good:#4FC79B; --good-soft:#12301F;
+  --warn:#E8A46A; --warn-soft:#33231A;
+  --shadow:0 1px 2px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:"IBM Plex Sans","Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+.num{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums}
+
+/* ---------- header ---------- */
+.top{background:var(--surface);border-bottom:1px solid var(--line)}
+.top-in{max-width:1280px;margin:0 auto;padding:16px}
+.brandrow{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px}
+h1{margin:0;font-size:19px;font-weight:700;letter-spacing:-.01em}
+.sub{color:var(--ink-3);font-size:12.5px}
+.stamp{margin-left:auto;display:flex;align-items:center;gap:7px;color:var(--ink-2);font-size:12px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--good);flex:none}
+
+.tabs{display:flex;gap:2px;overflow-x:auto;margin-top:14px;border-bottom:1px solid var(--line);
+  scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;appearance:none;background:none;border:0;border-bottom:2px solid transparent;
+  padding:9px 14px;font:inherit;font-weight:500;color:var(--ink-2);cursor:pointer;white-space:nowrap;
+  margin-bottom:-1px}
+.tab .c{color:var(--ink-3);font-size:12px;margin-left:5px}
+.tab[aria-selected="true"]{color:var(--accent);border-bottom-color:var(--accent);font-weight:600}
+.tab:hover{color:var(--ink)}
+.tab:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:4px}
+
+/* ---------- shell ---------- */
+.shell{max-width:1280px;margin:0 auto;padding:18px 16px 48px;display:grid;gap:18px;
+  grid-template-columns:228px minmax(0,1fr);align-items:start}
+@media (max-width:900px){.shell{grid-template-columns:1fr}}
+
+/* ---------- rail ---------- */
+.rail{display:flex;flex-direction:column;gap:14px;position:sticky;top:12px}
+@media (max-width:900px){.rail{position:static}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.panel h2{margin:0;padding:11px 14px;font-size:13px;font-weight:600;border-bottom:1px solid var(--line-soft)}
+.panel .body{padding:10px 14px 13px}
+.grp+.grp{margin-top:14px;padding-top:13px;border-top:1px dashed var(--line-soft)}
+.glabel{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);
+  font-weight:600;margin-bottom:7px}
+.opts{display:flex;flex-wrap:wrap;gap:6px}
+.opt{appearance:none;border:1px solid var(--line);background:var(--surface-2);color:var(--ink-2);
+  border-radius:999px;padding:4px 11px;font:inherit;font-size:12.5px;cursor:pointer}
+.opt:hover{border-color:var(--accent);color:var(--ink)}
+.opt[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface);font-weight:600}
+.opt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* benchmark table */
+.bm{width:100%;border-collapse:collapse;font-size:12.5px}
+.bm th{text-align:left;font-weight:600;color:var(--ink-3);font-size:10.5px;letter-spacing:.07em;
+  text-transform:uppercase;padding:0 0 6px}
+.bm td{padding:5px 0;border-top:1px solid var(--line-soft)}
+.bm td:first-child{color:var(--ink-2)}
+.bm td:last-child{text-align:right;font-weight:600}
+
+/* ---------- toolbar ---------- */
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:14px}
+.count{font-size:13px;color:var(--ink-2)}
+.count b{color:var(--ink);font-weight:600}
+.sortwrap{margin-left:auto;display:flex;align-items:center;gap:7px}
+.sortwrap label{font-size:12px;color:var(--ink-3)}
+select{appearance:none;background:var(--surface);color:var(--ink);border:1px solid var(--line);
+  border-radius:8px;padding:6px 28px 6px 10px;font:inherit;font-size:13px;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);
+  background-position:calc(100% - 15px) 52%,calc(100% - 10px) 52%;
+  background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+select:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+
+/* ---------- grid ---------- */
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(214px,1fr))}
+@media (max-width:420px){.grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  display:flex;flex-direction:column;overflow:hidden;box-shadow:var(--shadow);
+  transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--accent)}
+.rank{position:absolute;top:8px;left:8px;background:var(--ink);color:var(--surface);
+  font-size:10.5px;font-weight:600;padding:2px 6px;border-radius:5px;letter-spacing:.03em}
+.shot{position:relative;background:#fff;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;
+  border-bottom:1px solid var(--line-soft);overflow:hidden}
+.shot img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.shot .ph{color:#9aa7b5;font-size:11px}
+.deal{position:absolute;right:8px;top:8px;background:var(--good-soft);color:var(--good);
+  font-size:10.5px;font-weight:600;padding:2px 7px;border-radius:5px;border:1px solid currentColor}
+
+.meta{padding:10px 11px 0;display:flex;flex-wrap:wrap;gap:4px}
+.pill{font-size:10.5px;font-weight:500;padding:2px 7px;border-radius:5px;
+  background:var(--surface-2);border:1px solid var(--line);color:var(--ink-2)}
+.pill.cap{background:var(--accent-soft);border-color:transparent;color:var(--accent);font-weight:600}
+.pill.cond{background:var(--warn-soft);border-color:transparent;color:var(--warn)}
+
+.name{padding:8px 11px 10px;font-size:12.5px;line-height:1.45;color:var(--ink);
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:44px}
+.model{display:block;font-weight:600;font-size:13px;margin-bottom:2px;color:var(--ink)}
+
+.stats{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line-soft)}
+.stat{padding:9px 11px;text-align:center}
+.stat+.stat{border-left:1px solid var(--line-soft)}
+.stat .k{font-size:10px;color:var(--ink-3);letter-spacing:.06em;display:block;margin-bottom:1px}
+.stat .v{font-size:16px;font-weight:600;color:var(--accent)}
+.stat .v.muted{font-size:13px;color:var(--ink-3);font-weight:500}
+.stat .v.batt{color:var(--ink)}
+
+.foot{display:flex;align-items:center;gap:6px;padding:8px 11px;border-top:1px solid var(--line-soft);
+  font-size:11px;color:var(--ink-3);min-width:0}
+.foot .src{flex:none;padding:1px 6px;border-radius:4px;background:var(--surface-2);border:1px solid var(--line);color:var(--ink-2)}
+.foot .store{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.go{display:block;text-align:center;padding:9px;border-top:1px solid var(--line-soft);
+  font-size:12.5px;font-weight:600;color:var(--accent);text-decoration:none;background:var(--surface-2)}
+.go:hover{background:var(--accent);color:#fff}
+.go:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+
+.empty{padding:56px 20px;text-align:center;color:var(--ink-3);background:var(--surface);
+  border:1px dashed var(--line);border-radius:var(--r)}
+
+.note{margin-top:22px;padding:13px 15px;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--r);font-size:12px;color:var(--ink-2);line-height:1.7}
+.note b{color:var(--ink);font-weight:600}
+.note ul{margin:6px 0 0;padding-left:18px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <div class="brandrow">
+      <h1>二手 iPhone 16 行情看板</h1>
+      <span class="sub">臺灣二手交易平台每日追蹤</span>
+      <span class="stamp"><span class="dot"></span><span id="stamp" class="num"></span></span>
+    </div>
+    <div class="tabs" id="tabs" role="tablist"></div>
+  </div>
+</header>
+
+<div class="shell">
+  <aside class="rail">
+    <section class="panel">
+      <h2>篩選條件</h2>
+      <div class="body">
+        <div class="grp">
+          <div class="glabel">容量</div>
+          <div class="opts" id="f-cap"></div>
+        </div>
+        <div class="grp">
+          <div class="glabel">價格區間</div>
+          <div class="opts" id="f-price"></div>
+        </div>
+        <div class="grp">
+          <div class="glabel">成色標示</div>
+          <div class="opts" id="f-cond"></div>
+        </div>
+        <div class="grp">
+          <div class="glabel">來源網站</div>
+          <div class="opts" id="f-src"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>市場行情基準</h2>
+      <div class="body">
+        <table class="bm">
+          <thead><tr><th>機型</th><th style="text-align:right">二手均價</th></tr></thead>
+          <tbody id="bm"></tbody>
+        </table>
+      </div>
+    </section>
+  </aside>
+
+  <main>
+    <div class="toolbar">
+      <div class="count" id="count"></div>
+      <div class="sortwrap">
+        <label for="sort">排序方式</label>
+        <select id="sort">
+          <option value="asc">價格由低到高</option>
+          <option value="desc">價格由高到低</option>
+          <option value="deal">低於行情幅度</option>
+        </select>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty" hidden>目前沒有符合條件的商品。</div>
+
+    <div class="note">
+      <b>資料說明</b>
+      <ul>
+        <li>每日重新抓取，已下架或售出的商品會自動從看板移除。</li>
+        <li>價格為賣家標示的直購價，未含運費；實際成交價以賣場為準。</li>
+        <li>電池健康度與成色僅在賣家有明確標示時顯示，標示「未標示」者請點入賣場確認。</li>
+        <li>行情基準取自 SOGI 手機王公布的二手均價，用以計算「低於行情」幅度。</li>
+      </ul>
+    </div>
+  </main>
+</div>
+
+<script>
+const DATA = {
+  "updated": "2026-09-13T19:30:00+08:00",
+  "benchmarks": {
+    "iPhone 17":        {"used": 25030, "retail": 30890},
+    "iPhone 17 Pro":    {"used": 33963, "retail": 37090},
+    "iPhone 17 Pro Max":{"used": 38671, "retail": 40990},
+    "iPhone Air":       {"used": 30000, "retail": 35490},
+    "iPhone 17e":       {"used": null,  "retail": 23690}
+  },
+  "items": [
+    {"id":"22632324434982","t":"【艾爾巴二手】iPhone 17 256G A3520 白 6.3吋 二手機 保固中 新興店","p":18700,"v":"iPhone 17","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/c/10/26/22632324434982_338.jpg","u":"https://www.ruten.com.tw/item/show?22632324434982","s":"艾爾巴數位通訊","src":"露天市集"},
+    {"id":"22611270702314","t":"Apple iPhone 17e 256G 二手機","p":20900,"v":"iPhone 17e","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/d/60/ea/22611270702314_996.jpg","u":"https://www.ruten.com.tw/item/show?22611270702314","s":"萊分期","src":"露天市集"},
+    {"id":"22636558087529","t":"【炘馳通訊】iPhone 17 256G 白色 二手機 中古機","p":24500,"v":"iPhone 17","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/4/79/69/22636558087529_478.jpg","u":"https://www.ruten.com.tw/item/show?22636558087529","s":"炘馳通訊","src":"露天市集"},
+    {"id":"smart3c-air-256","t":"【福利品】Apple iPhone Air 256GB 6.5吋 (5G)","p":26900,"v":"iPhone Air","c":"256GB","b":null,"g":"S級福利品","i":"https://shoplineimg.com/5b6971ecf9129500172ad5b4/6a6abd6b1239999763614dad/375x.webp?source_format=jpg","u":"https://www.smart3c.com.tw/zh-hant/products/used-apple-iphone-air-256gb-65inch-5g","s":"Smart3C","src":"Smart3C"},
+    {"id":"22633390010975","t":"＊高雄雙大通訊＊Apple iPhone Air 256G（6.5吋）二手盒裝","p":27000,"v":"iPhone Air","c":"256GB","b":null,"g":"9.8成新","i":"https://gcs.rimg.com.tw/g1/f/76/5f/22633390010975_459.jpg","u":"https://www.ruten.com.tw/item/show?22633390010975","s":"高雄雙大通訊","src":"露天市集"},
+    {"id":"22611270748886","t":"Apple iPhone 17e 512G 二手機","p":27900,"v":"iPhone 17e","c":"512GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/e/16/d6/22611270748886_375.jpg","u":"https://www.ruten.com.tw/item/show?22611270748886","s":"萊分期","src":"露天市集"},
+    {"id":"22545364637737","t":"Apple iPhone 17 256G 二手機","p":29500,"v":"iPhone 17","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/1/e0/29/22545364637737_624.jpg","u":"https://www.ruten.com.tw/item/show?22545364637737","s":"萊分期","src":"露天市集"},
+    {"id":"22616495524961","t":"【有隻手機】Apple iPhone 17 霧藍色 512G 二手使用過的手機","p":31500,"v":"iPhone 17","c":"512GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/9/d8/61/22616495524961_107.jpg","u":"https://www.ruten.com.tw/item/show?22616495524961","s":"有隻手機","src":"露天市集"},
+    {"id":"22635481131477","t":"【炘馳通訊】iPhone 17 Pro 256G 橙色 二手機 中古機","p":32000,"v":"iPhone 17 Pro","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/3/6d/d5/22635481131477_123.jpg","u":"https://www.ruten.com.tw/item/show?22635481131477","s":"炘馳通訊","src":"露天市集"},
+    {"id":"22633389825528","t":"＊高雄雙大通訊＊Apple iPhone 17 512G（6.1吋）綠 二手盒裝","p":32000,"v":"iPhone 17","c":"512GB","b":null,"g":"9.8成新","i":"https://gcs.rimg.com.tw/g2/c/a1/f8/22633389825528_448.jpg","u":"https://www.ruten.com.tw/item/show?22633389825528","s":"高雄雙大通訊","src":"露天市集"},
+    {"id":"22636526478078","t":"【PChome 24h】【福利品】Apple iPhone 17 Pro 256G 宇宙橙","p":32000,"v":"iPhone 17 Pro","c":"256GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g5/047/d2f/pchome/2/26/fe/22636526478078_339.jpg","u":"https://www.ruten.com.tw/item/show?22636526478078","s":"PChome 24h 露天館","src":"露天市集"},
+    {"id":"22636557197788","t":"（星星通訊）二手 Apple iPhone 17 Pro 256G 藏藍色 實體門市","p":33000,"v":"iPhone 17 Pro","c":"256GB","b":100,"g":"9.2成新","i":"https://gcs.rimg.com.tw/g2/6/e5/dc/22636557197788_442.jpg","u":"https://www.ruten.com.tw/item/show?22636557197788","s":"星星通訊二手機專門店","src":"露天市集"},
+    {"id":"22635489689305","t":"【炘馳通訊】iPhone 17 Pro 256G 銀色 二手機 中古機","p":33000,"v":"iPhone 17 Pro","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/6/02/d9/22635489689305_297.jpg","u":"https://www.ruten.com.tw/item/show?22635489689305","s":"炘馳通訊","src":"露天市集"},
+    {"id":"22623852704764","t":"台南【詠悅數位3C】二手 iPhone 17 Pro 256G 銀","p":33000,"v":"iPhone 17 Pro","c":"256GB","b":100,"g":null,"i":"https://gcs.rimg.com.tw/g4/a80/8bf/phone_house/3/9b/fc/22623852704764_410.jpg","u":"https://www.ruten.com.tw/item/show?22623852704764","s":"詠悅數位3C","src":"露天市集"},
+    {"id":"22637615050052","t":"【炘馳通訊】iPhone 17 Pro 256G 藍色 二手機 中古機","p":34000,"v":"iPhone 17 Pro","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/4/71/44/22637615050052_810.jpg","u":"https://www.ruten.com.tw/item/show?22637615050052","s":"炘馳通訊","src":"露天市集"},
+    {"id":"22622798131902","t":"iPhone 17 Pro 256G 二手機 藏藍色【米米瑞隆】高雄實體","p":34000,"v":"iPhone 17 Pro","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g4/751/8f9/mi0968666316/8/1a/be/22622798131902_470.jpg","u":"https://www.ruten.com.tw/item/show?22622798131902","s":"米米科技-瑞隆店","src":"露天市集"},
+    {"id":"22545364762253","t":"Apple iPhone Air 256G 二手機","p":34700,"v":"iPhone Air","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/3/c6/8d/22545364762253_873.jpg","u":"https://www.ruten.com.tw/item/show?22545364762253","s":"萊分期","src":"露天市集"},
+    {"id":"22636548351500","t":"【艾爾巴二手】iPhone 17 Pro 256G A3523 6.3吋 橘 保固中","p":35500,"v":"iPhone 17 Pro","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/f/ea/0c/22636548351500_985.jpg","u":"https://www.ruten.com.tw/item/show?22636548351500","s":"艾爾巴數位通訊","src":"露天市集"},
+    {"id":"22633376026369","t":"Apple iPhone 17 Pro 256G 6.3吋 二手機","p":35800,"v":"iPhone 17 Pro","c":"256GB","b":100,"g":null,"i":"https://gcs.rimg.com.tw/g4/b44/111/buycellphone/a/13/01/22633376026369_195.png","u":"https://www.ruten.com.tw/item/show?22633376026369","s":"搶鮮機 Buycellphone","src":"露天市集"},
+    {"id":"22632336634998","t":"iPhone 17 Pro 256G 藍色 6.3吋 二手機 台北實體門市","p":36000,"v":"iPhone 17 Pro","c":"256GB","b":null,"g":"機況良好","i":"https://gcs.rimg.com.tw/g2/6/38/76/22632336634998_874.jpg","u":"https://www.ruten.com.tw/item/show?22632336634998","s":"3C瘋小姐","src":"露天市集"},
+    {"id":"22542213933343","t":"＊手機航＊Apple iPhone 17 Pro Max 256G（6.9吋）二手","p":36000,"v":"iPhone 17 Pro Max","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g5/4e9/118/tiger0719tw/5/f1/1f/22542213933343_235.jpg","u":"https://www.ruten.com.tw/item/show?22542213933343","s":"手機航","src":"露天市集"},
+    {"id":"22634421153250","t":"【傻瓜通訊】原廠保固二手機 iPhone 17 Pro 256G 銀色","p":36300,"v":"iPhone 17 Pro","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/5/71/e2/22634421153250_914.jpg","u":"https://www.ruten.com.tw/item/show?22634421153250","s":"傻瓜通訊","src":"露天市集"},
+    {"id":"22545364677012","t":"Apple iPhone 17 256G 二手機","p":36500,"v":"iPhone 17","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/2/79/94/22545364677012_350.jpg","u":"https://www.ruten.com.tw/item/show?22545364677012","s":"萊分期","src":"露天市集"},
+    {"id":"22625922529815","t":"《US3C》Apple iPhone 17 Pro 6.3吋 原廠公司貨 藏藍色","p":36600,"v":"iPhone 17 Pro","c":null,"b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g4/72b/d51/us3c_tw/2/a2/17/22625922529815_646.png","u":"https://www.ruten.com.tw/item/show?22625922529815","s":"US3C","src":"露天市集"},
+    {"id":"22637615050041","t":"【炘馳通訊】iPhone 17 Pro Max 256G 銀色 二手機","p":37500,"v":"iPhone 17 Pro Max","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/4/71/39/22637615050041_945.jpg","u":"https://www.ruten.com.tw/item/show?22637615050041","s":"炘馳通訊","src":"露天市集"},
+    {"id":"22632324894151","t":"【艾爾巴二手】iPhone 17 Pro Max A3526 1TB 藍 保固中","p":37700,"v":"iPhone 17 Pro Max","c":"1TB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/3/11/c7/22632324894151_250.jpg","u":"https://www.ruten.com.tw/item/show?22632324894151","s":"艾爾巴數位通訊","src":"露天市集"},
+    {"id":"22623852521334","t":"台南【詠悅數位3C】二手 iPhone 17 Pro Max 256G 銀","p":38500,"v":"iPhone 17 Pro Max","c":"256GB","b":100,"g":null,"i":"https://gcs.rimg.com.tw/g4/a80/8bf/phone_house/0/cf/76/22623852521334_393.jpg","u":"https://www.ruten.com.tw/item/show?22623852521334","s":"詠悅數位3C","src":"露天市集"},
+    {"id":"22625922609555","t":"《US3C》Apple iPhone 17 Pro 6.3吋 原廠公司貨 銀色","p":38900,"v":"iPhone 17 Pro","c":null,"b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g4/72b/d51/us3c_tw/3/d9/93/22625922609555_784.png","u":"https://www.ruten.com.tw/item/show?22625922609555","s":"US3C","src":"露天市集"},
+    {"id":"22634424753484","t":"【炘馳通訊】iPhone 17 Pro Max 256G 銀色 二手機","p":39000,"v":"iPhone 17 Pro Max","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/c/61/4c/22634424753484_906.jpg","u":"https://www.ruten.com.tw/item/show?22634424753484","s":"炘馳通訊","src":"露天市集"},
+    {"id":"22545365247252","t":"Apple iPhone 17 Pro 256G 二手機","p":39000,"v":"iPhone 17 Pro","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/b/2d/14/22545365247252_528.jpg","u":"https://www.ruten.com.tw/item/show?22545365247252","s":"萊分期","src":"露天市集"},
+    {"id":"22635515119639","t":"iPhone 17 Pro Max 256G 銀色 6.9吋 二手機 台北中山","p":39500,"v":"iPhone 17 Pro Max","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/a/0c/17/22635515119639_385.jpg","u":"https://www.ruten.com.tw/item/show?22635515119639","s":"3C瘋小姐","src":"露天市集"},
+    {"id":"22545364837537","t":"Apple iPhone Air 512G 二手機","p":41700,"v":"iPhone Air","c":"512GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/4/ec/a1/22545364837537_588.jpg","u":"https://www.ruten.com.tw/item/show?22545364837537","s":"萊分期","src":"露天市集"},
+    {"id":"22636538171576","t":"【炘馳通訊】iPhone 17 Pro Max 512G 銀色 二手機","p":42500,"v":"iPhone 17 Pro Max","c":"512GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/4/94/b8/22636538171576_308.jpg","u":"https://www.ruten.com.tw/item/show?22636538171576","s":"炘馳通訊","src":"露天市集"},
+    {"id":"22545365349626","t":"Apple iPhone 17 Pro Max 256G 二手機","p":44400,"v":"iPhone 17 Pro Max","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/c/bc/fa/22545365349626_642.jpg","u":"https://www.ruten.com.tw/item/show?22545365349626","s":"萊分期","src":"露天市集"},
+    {"id":"22545365273509","t":"Apple iPhone 17 Pro 512G 二手機","p":46000,"v":"iPhone 17 Pro","c":"512GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/b/93/a5/22545365273509_498.jpg","u":"https://www.ruten.com.tw/item/show?22545365273509","s":"萊分期","src":"露天市集"},
+    {"id":"22635472719570","t":"【PChome 24h】【福利品】iPhone 17 Pro Max 512GB 原廠盒裝 藏藍色","p":46500,"v":"iPhone 17 Pro Max","c":"512GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g5/047/d2f/pchome/3/12/d2/22635472719570_393.jpg","u":"https://www.ruten.com.tw/item/show?22635472719570","s":"PChome 24h 露天館","src":"露天市集"},
+    {"id":"22545365180449","t":"Apple iPhone Air 1TB 二手機","p":48700,"v":"iPhone Air","c":"1TB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/a/28/21/22545365180449_544.jpg","u":"https://www.ruten.com.tw/item/show?22545365180449","s":"萊分期","src":"露天市集"},
+    {"id":"22545365397731","t":"Apple iPhone 17 Pro Max 512G 二手機","p":51000,"v":"iPhone 17 Pro Max","c":"512GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/d/78/e3/22545365397731_913.jpg","u":"https://www.ruten.com.tw/item/show?22545365397731","s":"萊分期","src":"露天市集"},
+    {"id":"22545365309341","t":"Apple iPhone 17 Pro 512G 二手機","p":53000,"v":"iPhone 17 Pro","c":"512GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/c/1f/9d/22545365309341_407.jpg","u":"https://www.ruten.com.tw/item/show?22545365309341","s":"萊分期","src":"露天市集"},
+    {"id":"22545365450528","t":"Apple iPhone 17 Pro Max 1TB 二手機","p":58900,"v":"iPhone 17 Pro Max","c":"1TB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/e/47/20/22545365450528_339.jpg","u":"https://www.ruten.com.tw/item/show?22545365450528","s":"萊分期","src":"露天市集"},
+    {"id":"smart3c-pm-2tb","t":"【福利品】Apple iPhone 17 Pro Max 2TB 6.9吋 (5G)","p":65900,"v":"iPhone 17 Pro Max","c":"2TB","b":null,"g":"S級福利品","i":"https://shoplineimg.com/5b6971ecf9129500172ad5b4/6a7ab78c00f018d879967d39/375x.webp?source_format=jpg","u":"https://www.smart3c.com.tw/zh-hant/products/used-apple-iphone-17-pro-max-2tb-69inch-5g","s":"Smart3C","src":"Smart3C"}
+  ]
+};
+const ORDER = ["iPhone 16","iPhone 16 Plus","iPhone 16 Pro","iPhone 16 Pro Max","iPhone 16e"];
+const CAPS  = ["128GB","256GB","512GB","1TB"];
+const BANDS = [
+  {k:"~18k", lo:0, hi:18000},
+  {k:"18–25k", lo:18000, hi:25000},
+  {k:"25–35k", lo:25000, hi:35000},
+  {k:"35k+", lo:35000, hi:Infinity}
+];
+const state = {model:"all", caps:new Set(), band:null, condOnly:false, battOnly:false, srcs:new Set(), sort:"asc"};
+
+const $ = s => document.querySelector(s);
+const nt = n => n.toLocaleString("zh-TW");
+function bench(v, c){
+  const byCap = DATA.benchmarks[v];
+  if(!byCap) return null;
+  const hit = (c && byCap[c]) || byCap["*"];
+  return hit && hit.used ? hit.used : null;
+}
+function dealPct(it){ const b = bench(it.v, it.c); return b ? Math.round((b-it.p)/b*100) : null; }
+
+/* ---- header stamp ---- */
+(function(){
+  const d = new Date(DATA.updated);
+  const p = n => String(n).padStart(2,"0");
+  $("#stamp").textContent = `${d.getFullYear()}/${p(d.getMonth()+1)}/${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())} 更新`;
+})();
+
+/* ---- tabs ---- */
+(function(){
+  const wrap = $("#tabs");
+  const mk = (val,label,count) => {
+    const b = document.createElement("button");
+    b.className="tab"; b.type="button"; b.role="tab"; b.dataset.v=val;
+    b.setAttribute("aria-selected", String(val===state.model));
+    b.innerHTML = `${label}<span class="c num">${count}</span>`;
+    b.onclick = () => { state.model=val; [...wrap.children].forEach(c=>c.setAttribute("aria-selected",String(c.dataset.v===val))); render(); };
+    return b;
+  };
+  wrap.appendChild(mk("all","全部機型",DATA.items.length));
+  ORDER.forEach(v=>{
+    const n = DATA.items.filter(i=>i.v===v).length;
+    if(n) wrap.appendChild(mk(v,v.replace("iPhone ",""),n));
+  });
+})();
+
+/* ---- filters ---- */
+function chip(host,label,pressed,onToggle){
+  const b=document.createElement("button");
+  b.className="opt"; b.type="button"; b.textContent=label;
+  b.setAttribute("aria-pressed",String(pressed));
+  b.onclick=()=>{ onToggle(b); render(); };
+  host.appendChild(b); return b;
+}
+(function(){
+  const capHost=$("#f-cap");
+  CAPS.filter(c=>DATA.items.some(i=>i.c===c)).forEach(c=>{
+    chip(capHost,c,false,b=>{
+      const on = b.getAttribute("aria-pressed")!=="true";
+      b.setAttribute("aria-pressed",String(on));
+      on?state.caps.add(c):state.caps.delete(c);
+    });
+  });
+  const pHost=$("#f-price");
+  BANDS.forEach(bd=>{
+    chip(pHost,bd.k,false,b=>{
+      const on=b.getAttribute("aria-pressed")!=="true";
+      [...pHost.children].forEach(c=>c.setAttribute("aria-pressed","false"));
+      b.setAttribute("aria-pressed",String(on));
+      state.band = on ? bd : null;
+    });
+  });
+  const cHost=$("#f-cond");
+  chip(cHost,"有標示成色",false,b=>{const on=b.getAttribute("aria-pressed")!=="true";b.setAttribute("aria-pressed",String(on));state.condOnly=on;});
+  chip(cHost,"有標示電池",false,b=>{const on=b.getAttribute("aria-pressed")!=="true";b.setAttribute("aria-pressed",String(on));state.battOnly=on;});
+  const sHost=$("#f-src");
+  [...new Set(DATA.items.map(i=>i.src))].forEach(s=>{
+    chip(sHost,s,false,b=>{const on=b.getAttribute("aria-pressed")!=="true";b.setAttribute("aria-pressed",String(on));on?state.srcs.add(s):state.srcs.delete(s);});
+  });
+})();
+
+/* ---- benchmark table ---- */
+(function(){
+  const tb=$("#bm");
+  ORDER.forEach(v=>{
+    const byCap=DATA.benchmarks[v]; if(!byCap) return;
+    Object.keys(byCap).forEach(c=>{
+      const b=byCap[c];
+      const tr=document.createElement("tr");
+      const label=v.replace("iPhone ","")+(c==="*"?"":" "+c);
+      tr.innerHTML=`<td>${label}</td><td class="num">${b.used?"$"+nt(b.used):"—"}</td>`;
+      tb.appendChild(tr);
+    });
+  });
+})();
+
+$("#sort").onchange = e => { state.sort=e.target.value; render(); };
+
+/* ---- render ---- */
+function render(){
+  let rows = DATA.items.filter(i=>{
+    if(state.model!=="all" && i.v!==state.model) return false;
+    if(state.caps.size && !state.caps.has(i.c)) return false;
+    if(state.band && !(i.p>=state.band.lo && i.p<state.band.hi)) return false;
+    if(state.condOnly && !i.g) return false;
+    if(state.battOnly && !i.b) return false;
+    if(state.srcs.size && !state.srcs.has(i.src)) return false;
+    return true;
+  });
+  if(state.sort==="asc") rows.sort((a,b)=>a.p-b.p);
+  else if(state.sort==="desc") rows.sort((a,b)=>b.p-a.p);
+  else rows.sort((a,b)=>(dealPct(b)??-999)-(dealPct(a)??-999));
+
+  const lo = rows.length?Math.min(...rows.map(r=>r.p)):0;
+  $("#count").innerHTML = rows.length
+    ? `共 <b class="num">${rows.length}</b> 件 · 最低 <b class="num">$${nt(lo)}</b>`
+    : "";
+
+  const grid=$("#grid"); grid.innerHTML="";
+  $("#empty").hidden = rows.length>0;
+
+  rows.forEach((it,idx)=>{
+    const pct = dealPct(it);
+    const el=document.createElement("article");
+    el.className="card";
+    el.innerHTML = `
+      <div class="shot">
+        ${state.sort==="asc"&&idx<3?`<span class="rank num">#${idx+1}</span>`:""}
+        ${pct!==null&&pct>=5?`<span class="deal num">低於行情 ${pct}%</span>`:""}
+        ${it.i?`<img src="${it.i}" alt="${it.v} 商品照片" loading="lazy" referrerpolicy="no-referrer"
+              onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'ph',textContent:'無商品照片'}))">`
+             :`<span class="ph">無商品照片</span>`}
+      </div>
+      <div class="meta">
+        <span class="pill cap">${it.c||"容量未標示"}</span>
+        <span class="pill cond">${it.g||"成色未標示"}</span>
+      </div>
+      <div class="name"><span class="model">${it.v}</span>${it.t}</div>
+      <div class="stats">
+        <div class="stat"><span class="k">價格</span>
+          <span class="v num">$${nt(it.p)}</span></div>
+        <div class="stat"><span class="k">電池健康</span>
+          <span class="v num ${it.b?"batt":"muted"}">${it.b?it.b+"%":"未標示"}</span></div>
+      </div>
+      <div class="foot"><span class="src">${it.src}</span><span class="store">${it.s||""}</span></div>
+      <a class="go" href="${it.u}" target="_blank" rel="noopener noreferrer">查看賣場</a>`;
+    grid.appendChild(el);
+  });
+}
+render();
+</script>
+
+</body>
+</html>

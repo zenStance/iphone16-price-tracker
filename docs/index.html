@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>html{color-scheme:light dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>二手 iPhone 16 行情看板</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+:root{
+  --ground:#EEF1F5;
+  --surface:#FFFFFF;
+  --surface-2:#F7F9FB;
+  --line:#DCE2EA;
+  --line-soft:#E9EDF2;
+  --ink:#162231;
+  --ink-2:#4B5A6B;
+  --ink-3:#7C8B9C;
+  --accent:#0B5FC1;
+  --accent-soft:#E7F0FC;
+  --good:#0A7A55;
+  --good-soft:#E2F3EC;
+  --warn:#9A4A11;
+  --warn-soft:#FBEDE2;
+  --shadow:0 1px 2px rgba(22,34,49,.05);
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0D1218;
+    --surface:#151C24;
+    --surface-2:#1B242E;
+    --line:#28323E;
+    --line-soft:#212B35;
+    --ink:#E8EEF5;
+    --ink-2:#A9B7C6;
+    --ink-3:#7C8B9C;
+    --accent:#6BA8FF;
+    --accent-soft:#15293F;
+    --good:#4FC79B;
+    --good-soft:#12301F;
+    --warn:#E8A46A;
+    --warn-soft:#33231A;
+    --shadow:0 1px 2px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0D1218; --surface:#151C24; --surface-2:#1B242E;
+  --line:#28323E; --line-soft:#212B35;
+  --ink:#E8EEF5; --ink-2:#A9B7C6; --ink-3:#7C8B9C;
+  --accent:#6BA8FF; --accent-soft:#15293F;
+  --good:#4FC79B; --good-soft:#12301F;
+  --warn:#E8A46A; --warn-soft:#33231A;
+  --shadow:0 1px 2px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:"IBM Plex Sans","Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+.num{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums}
+
+/* ---------- header ---------- */
+.top{background:var(--surface);border-bottom:1px solid var(--line)}
+.top-in{max-width:1280px;margin:0 auto;padding:16px}
+.brandrow{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px}
+h1{margin:0;font-size:19px;font-weight:700;letter-spacing:-.01em}
+.sub{color:var(--ink-3);font-size:12.5px}
+.stamp{margin-left:auto;display:flex;align-items:center;gap:7px;color:var(--ink-2);font-size:12px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--good);flex:none}
+
+.tabs{display:flex;gap:2px;overflow-x:auto;margin-top:14px;border-bottom:1px solid var(--line);
+  scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;appearance:none;background:none;border:0;border-bottom:2px solid transparent;
+  padding:9px 14px;font:inherit;font-weight:500;color:var(--ink-2);cursor:pointer;white-space:nowrap;
+  margin-bottom:-1px}
+.tab .c{color:var(--ink-3);font-size:12px;margin-left:5px}
+.tab[aria-selected="true"]{color:var(--accent);border-bottom-color:var(--accent);font-weight:600}
+.tab:hover{color:var(--ink)}
+.tab:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:4px}
+
+/* ---------- shell ---------- */
+.shell{max-width:1280px;margin:0 auto;padding:18px 16px 48px;display:grid;gap:18px;
+  grid-template-columns:228px minmax(0,1fr);align-items:start}
+@media (max-width:900px){.shell{grid-template-columns:1fr}}
+
+/* ---------- rail ---------- */
+.rail{display:flex;flex-direction:column;gap:14px;position:sticky;top:12px}
+@media (max-width:900px){.rail{position:static}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.panel h2{margin:0;padding:11px 14px;font-size:13px;font-weight:600;border-bottom:1px solid var(--line-soft)}
+.panel .body{padding:10px 14px 13px}
+.grp+.grp{margin-top:14px;padding-top:13px;border-top:1px dashed var(--line-soft)}
+.glabel{font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);
+  font-weight:600;margin-bottom:7px}
+.opts{display:flex;flex-wrap:wrap;gap:6px}
+.opt{appearance:none;border:1px solid var(--line);background:var(--surface-2);color:var(--ink-2);
+  border-radius:999px;padding:4px 11px;font:inherit;font-size:12.5px;cursor:pointer}
+.opt:hover{border-color:var(--accent);color:var(--ink)}
+.opt[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface);font-weight:600}
+.opt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* benchmark table */
+.bm{width:100%;border-collapse:collapse;font-size:12.5px}
+.bm th{text-align:left;font-weight:600;color:var(--ink-3);font-size:10.5px;letter-spacing:.07em;
+  text-transform:uppercase;padding:0 0 6px}
+.bm td{padding:5px 0;border-top:1px solid var(--line-soft)}
+.bm td:first-child{color:var(--ink-2)}
+.bm td:last-child{text-align:right;font-weight:600}
+
+/* ---------- toolbar ---------- */
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:14px}
+.count{font-size:13px;color:var(--ink-2)}
+.count b{color:var(--ink);font-weight:600}
+.sortwrap{margin-left:auto;display:flex;align-items:center;gap:7px}
+.sortwrap label{font-size:12px;color:var(--ink-3)}
+select{appearance:none;background:var(--surface);color:var(--ink);border:1px solid var(--line);
+  border-radius:8px;padding:6px 28px 6px 10px;font:inherit;font-size:13px;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);
+  background-position:calc(100% - 15px) 52%,calc(100% - 10px) 52%;
+  background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+select:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+
+/* ---------- grid ---------- */
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(214px,1fr))}
+@media (max-width:420px){.grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  display:flex;flex-direction:column;overflow:hidden;box-shadow:var(--shadow);
+  transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--accent)}
+.rank{position:absolute;top:8px;left:8px;background:var(--ink);color:var(--surface);
+  font-size:10.5px;font-weight:600;padding:2px 6px;border-radius:5px;letter-spacing:.03em}
+.shot{position:relative;background:#fff;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;
+  border-bottom:1px solid var(--line-soft);overflow:hidden}
+.shot img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.shot .ph{color:#9aa7b5;font-size:11px}
+.deal{position:absolute;right:8px;top:8px;background:var(--good-soft);color:var(--good);
+  font-size:10.5px;font-weight:600;padding:2px 7px;border-radius:5px;border:1px solid currentColor}
+
+.meta{padding:10px 11px 0;display:flex;flex-wrap:wrap;gap:4px}
+.pill{font-size:10.5px;font-weight:500;padding:2px 7px;border-radius:5px;
+  background:var(--surface-2);border:1px solid var(--line);color:var(--ink-2)}
+.pill.cap{background:var(--accent-soft);border-color:transparent;color:var(--accent);font-weight:600}
+.pill.cond{background:var(--warn-soft);border-color:transparent;color:var(--warn)}
+
+.name{padding:8px 11px 10px;font-size:12.5px;line-height:1.45;color:var(--ink);
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:44px}
+.model{display:block;font-weight:600;font-size:13px;margin-bottom:2px;color:var(--ink)}
+
+.stats{margin-top:auto;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line-soft)}
+.stat{padding:9px 11px;text-align:center}
+.stat+.stat{border-left:1px solid var(--line-soft)}
+.stat .k{font-size:10px;color:var(--ink-3);letter-spacing:.06em;display:block;margin-bottom:1px}
+.stat .v{font-size:16px;font-weight:600;color:var(--accent)}
+.stat .v.muted{font-size:13px;color:var(--ink-3);font-weight:500}
+.stat .v.batt{color:var(--ink)}
+
+.foot{display:flex;align-items:center;gap:6px;padding:8px 11px;border-top:1px solid var(--line-soft);
+  font-size:11px;color:var(--ink-3);min-width:0}
+.foot .src{flex:none;padding:1px 6px;border-radius:4px;background:var(--surface-2);border:1px solid var(--line);color:var(--ink-2)}
+.foot .store{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.go{display:block;text-align:center;padding:9px;border-top:1px solid var(--line-soft);
+  font-size:12.5px;font-weight:600;color:var(--accent);text-decoration:none;background:var(--surface-2)}
+.go:hover{background:var(--accent);color:#fff}
+.go:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+
+.empty{padding:56px 20px;text-align:center;color:var(--ink-3);background:var(--surface);
+  border:1px dashed var(--line);border-radius:var(--r)}
+
+.note{margin-top:22px;padding:13px 15px;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--r);font-size:12px;color:var(--ink-2);line-height:1.7}
+.note b{color:var(--ink);font-weight:600}
+.note ul{margin:6px 0 0;padding-left:18px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <div class="brandrow">
+      <h1>二手 iPhone 16 行情看板</h1>
+      <span class="sub">臺灣二手交易平台每日追蹤</span>
+      <span class="stamp"><span class="dot"></span><span id="stamp" class="num"></span></span>
+    </div>
+    <div class="tabs" id="tabs" role="tablist"></div>
+  </div>
+</header>
+
+<div class="shell">
+  <aside class="rail">
+    <section class="panel">
+      <h2>篩選條件</h2>
+      <div class="body">
+        <div class="grp">
+          <div class="glabel">容量</div>
+          <div class="opts" id="f-cap"></div>
+        </div>
+        <div class="grp">
+          <div class="glabel">價格區間</div>
+          <div class="opts" id="f-price"></div>
+        </div>
+        <div class="grp">
+          <div class="glabel">成色標示</div>
+          <div class="opts" id="f-cond"></div>
+        </div>
+        <div class="grp">
+          <div class="glabel">來源網站</div>
+          <div class="opts" id="f-src"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>市場行情基準</h2>
+      <div class="body">
+        <table class="bm">
+          <thead><tr><th>機型</th><th style="text-align:right">二手均價</th></tr></thead>
+          <tbody id="bm"></tbody>
+        </table>
+      </div>
+    </section>
+  </aside>
+
+  <main>
+    <div class="toolbar">
+      <div class="count" id="count"></div>
+      <div class="sortwrap">
+        <label for="sort">排序方式</label>
+        <select id="sort">
+          <option value="asc">價格由低到高</option>
+          <option value="desc">價格由高到低</option>
+          <option value="deal">低於行情幅度</option>
+        </select>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty" hidden>目前沒有符合條件的商品。</div>
+
+    <div class="note">
+      <b>資料說明</b>
+      <ul>
+        <li>每日重新抓取，已下架或售出的商品會自動從看板移除。</li>
+        <li>價格為賣家標示的直購價，未含運費；實際成交價以賣場為準。</li>
+        <li>電池健康度與成色僅在賣家有明確標示時顯示，標示「未標示」者請點入賣場確認。</li>
+        <li>行情基準取自 SOGI 手機王公布的二手均價，用以計算「低於行情」幅度。</li>
+      </ul>
+    </div>
+  </main>
+</div>
+
+<script>
+const DATA = {"updated":"2026-09-13T22:15:00+08:00","benchmarks":{"iPhone 16":{"128GB":{"used":18098,"retail":25990}},"iPhone 16 Plus":{"128GB":{"used":20918,"retail":29990},"256GB":{"used":22725,"retail":32990},"512GB":{"used":null,"retail":39390}},"iPhone 16 Pro":{"128GB":{"used":22877,"retail":29790},"256GB":{"used":26068,"retail":35090},"512GB":{"used":30186,"retail":38500},"1TB":{"used":33000,"retail":42990}},"iPhone 16 Pro Max":{"1TB":{"used":34750,"retail":53000}},"iPhone 16e":{"*":{"used":14888,"retail":17190}}},"items":[{"t":"【艾爾巴二手】iPhone 16 256G 6.1吋 A3287 銀 #二手機#新興店GCFQ5","p":11700,"v":"iPhone 16","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/8/d5/00/22632349389056_681.jpg","u":"https://www.ruten.com.tw/item/show?22632349389056","s":"艾爾巴數位通訊","src":"露天市集"},{"t":"《US3C》Apple iPhone 16e 6.1吋 備用機 工作機 孝親機 黑色 二手手機","p":12400,"v":"iPhone 16e","c":null,"b":null,"g":null,"i":"https://gcs.rimg.com.tw/g4/72b/d51/us3c_tw/9/9d/28/22625921938728_341.png","u":"https://www.ruten.com.tw/item/show?22625921938728","s":"US3C","src":"露天市集"},{"t":"【傻瓜通訊】嚴選二手機 Apple iPhone 16e｜6.1吋｜128GB｜A18 晶片｜黑色","p":12650,"v":"iPhone 16e","c":"128GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/9/8a/97/22629110653591_746.jpg","u":"https://www.ruten.com.tw/item/show?22629110653591","s":"傻瓜通訊","src":"露天市集"},{"t":"Apple iPhone 16e 128G 二手蘋果手機 6.1吋 白色","p":13000,"v":"iPhone 16e","c":"128GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/5/ea/71/22637640312433_396.jpg","u":"https://www.ruten.com.tw/item/show?22637640312433","s":"蘿蔔陳的賣場","src":"露天市集"},{"t":"Apple iPhone 16e 128G 二手蘋果手機 6.1吋","p":13500,"v":"iPhone 16e","c":"128GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/b/74/bf/22637630189759_228.jpg","u":"https://www.ruten.com.tw/item/show?22637630189759","s":"蘿蔔陳的賣場","src":"露天市集"},{"t":"《US3C》Apple iPhone 16e 6.1吋 備用機 工作機 孝親機 白色 二手手機","p":14200,"v":"iPhone 16e","c":null,"b":null,"g":null,"i":"https://gcs.rimg.com.tw/g4/72b/d51/us3c_tw/8/3d/28/22625921848616_164.png","u":"https://www.ruten.com.tw/item/show?22625921848616","s":"US3C","src":"露天市集"},{"t":"Apple iPhone 16e 128G 二手蘋果手機 6.1吋","p":14300,"v":"iPhone 16e","c":"128GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/6/58/12/22636558210066_559.jpg","u":"https://www.ruten.com.tw/item/show?22636558210066","s":"蘿蔔陳的賣場","src":"露天市集"},{"t":"勝利店 二手機 中古機 Apple iPhone 16e（6.1吋）128G 白色 保固中","p":14900,"v":"iPhone 16e","c":"128GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/e/09/26/22630194906406_925.jpg","u":"https://www.ruten.com.tw/item/show?22630194906406","s":"台南天語手機館","src":"露天市集"},{"t":"奇機通訊【二手】iPhone 16e 256GB｜店家保固1個月｜功能正常","p":15990,"v":"iPhone 16e","c":"256GB","b":100,"g":null,"i":"https://gcs.rimg.com.tw/g1/e/67/63/22636554543971_840.jpg","u":"https://www.ruten.com.tw/item/show?22636554543971","s":"奇機7G3C","src":"露天市集"},{"t":"【艾爾巴二手】iPhone 16 Plus 128G 6.7吋 A3290 黑 #二手手機#桃園店","p":16000,"v":"iPhone 16 Plus","c":"128GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/d/d1/39/22637596790073_541.jpg","u":"https://www.ruten.com.tw/item/show?22637596790073","s":"艾爾巴數位通訊","src":"露天市集"},{"t":"『澄橘』Apple iPhone 16 128GB（6.1吋）綠《二手3C 歡迎折抵》","p":16000,"v":"iPhone 16","c":"128GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/6/52/a2/22633393606306_430.jpg","u":"https://www.ruten.com.tw/item/show?22633393606306","s":"澄橘數位 二手3C 買賣","src":"露天市集"},{"t":"Apple iPhone 16 128GB 6.1吋（5G）二手機 中古機 福利品 創宇通訊","p":16600,"v":"iPhone 16","c":"128GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g4/1e9/012/smartmobile/c/f0/4b/22537887188043_859.jpg","u":"https://www.ruten.com.tw/item/show?22537887188043","s":"創宇通訊","src":"露天市集"},{"t":"9.9成新 中古機 二手機 Apple iPhone 16 128G 粉 萊斯通訊","p":16960,"v":"iPhone 16","c":"128GB","b":null,"g":"9.9成新","i":"https://gcs.rimg.com.tw/g1/1/03/5d/22624883284829_328.jpg","u":"https://www.ruten.com.tw/item/show?22624883284829","s":"萊分期","src":"露天市集"},{"t":"【炘馳通訊】iPhone 16 128G 藍色 二手機 中古機","p":17000,"v":"iPhone 16","c":"128GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/4/94/f1/22636538171633_338.jpg","u":"https://www.ruten.com.tw/item/show?22636538171633","s":"炘馳通訊","src":"露天市集"},{"t":"【傻瓜通訊】嚴選二手機 Apple iPhone 16｜6.1吋｜128GB｜相機控制鍵｜黑色","p":17050,"v":"iPhone 16","c":"128GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/0/1d/31/22637594843441_409.jpg","u":"https://www.ruten.com.tw/item/show?22637594843441","s":"傻瓜通訊","src":"露天市集"},{"t":"【PChome 24h購物】Apple iPhone 16e 128G 保固6個月 A++福利品","p":17490,"v":"iPhone 16e","c":"128GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g5/047/d2f/pchome/2/0b/23/22601873939235_914.jpg","u":"https://www.ruten.com.tw/item/show?22601873939235","s":"PChome 24h 露天館","src":"露天市集"},{"t":"台南【詠悅數位3C】二手 iPhone 16 128G 藍（保固至 26.07.08）","p":17500,"v":"iPhone 16","c":"128GB","b":91,"g":null,"i":"https://gcs.rimg.com.tw/g4/a80/8bf/phone_house/9/0d/5e/22624883811678_192.jpg","u":"https://www.ruten.com.tw/item/show?22624883811678","s":"詠悅數位3C","src":"露天市集"},{"t":"【樂曄通訊】二手九成新 iPhone 16 256GB 湛海藍 外觀良好 無維修 保固中","p":17990,"v":"iPhone 16","c":"256GB","b":99,"g":null,"i":"https://gcs.rimg.com.tw/g1/0/84/73/22634431316083_175.jpg","u":"https://www.ruten.com.tw/item/show?22634431316083","s":"樂曄通訊","src":"露天市集"},{"t":"Apple iPhone 16 128GB 二手機","p":19000,"v":"iPhone 16","c":"128GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/e/b1/da/22438749232602_717.jpg","u":"https://www.ruten.com.tw/item/show?22438749232602","s":"萊分期","src":"露天市集"},{"t":"【PChome 24h購物】Apple iPhone 16e 256G 保固6個月 A++福利品","p":19490,"v":"iPhone 16e","c":"256GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g5/047/d2f/pchome/2/0b/2e/22601873939246_821.jpg","u":"https://www.ruten.com.tw/item/show?22601873939246","s":"PChome 24h 露天館","src":"露天市集"},{"t":"【炘馳通訊】Apple iPhone 16 256G 綠色 二手機 中古機","p":19500,"v":"iPhone 16","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/4/94/e6/22636538171622_753.jpg","u":"https://www.ruten.com.tw/item/show?22636538171622","s":"炘馳通訊","src":"露天市集"},{"t":"【艾爾巴二手】iPhone 16 Pro 128G 6.3吋 金鈦 #二手機 #板橋店","p":20500,"v":"iPhone 16 Pro","c":"128GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/1/d3/24/22626980490020_201.jpg","u":"https://www.ruten.com.tw/item/show?22626980490020","s":"艾爾巴數位通訊","src":"露天市集"},{"t":"※台中北屯區通訊行※ 9.9成新原廠電池 福利機／二手機 Apple iPhone 16","p":20500,"v":"iPhone 16","c":"128GB","b":100,"g":"9.9成新","i":"https://gcs.rimg.com.tw/g1/2/86/7d/22605095196285_547.jpg","u":"https://www.ruten.com.tw/item/show?22605095196285","s":"台中北屯通訊行","src":"露天市集"},{"t":"Apple iPhone 16 256GB 6.1吋（5G）二手機 中古機 福利品 創宇通訊","p":20900,"v":"iPhone 16","c":"256GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g4/1e9/012/smartmobile/9/09/b1/22442989033905_184.jpg","u":"https://www.ruten.com.tw/item/show?22442989033905","s":"創宇通訊","src":"露天市集"},{"t":"【炘馳通訊】iPhone 16 Pro 128G 金色 二手機 中古機","p":21000,"v":"iPhone 16 Pro","c":"128GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/1/6e/c6/22637641067206_528.jpg","u":"https://www.ruten.com.tw/item/show?22637641067206","s":"炘馳通訊","src":"露天市集"},{"t":"【PChome 24h購物】【認證福利品】Apple iPhone 16 Pro 128GB 黑色鈦","p":21400,"v":"iPhone 16 Pro","c":"128GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g5/047/d2f/pchome/c/ac/4b/22632311892043_742.jpg","u":"https://www.ruten.com.tw/item/show?22632311892043","s":"PChome 24h 露天館","src":"露天市集"},{"t":"【炘馳通訊】Apple iPhone 16 Plus 128G 粉色 二手機 中古機","p":21500,"v":"iPhone 16 Plus","c":"128GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/e/41/e9/22631261322729_991.jpg","u":"https://www.ruten.com.tw/item/show?22631261322729","s":"炘馳通訊","src":"露天市集"},{"t":"【PChome 24h購物】【福利品】Apple iPhone 16 128GB（A+）綠色","p":21990,"v":"iPhone 16","c":"128GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g5/047/d2f/pchome/1/df/5d/22632313281373_276.jpg","u":"https://www.ruten.com.tw/item/show?22632313281373","s":"PChome 24h 露天館","src":"露天市集"},{"t":"【炘馳通訊】iPhone 16 Pro 128G 白色 二手機 中古機","p":22000,"v":"iPhone 16 Pro","c":"128GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/4/71/65/22637615050085_268.jpg","u":"https://www.ruten.com.tw/item/show?22637615050085","s":"炘馳通訊","src":"露天市集"},{"t":"（星星通訊）二手 Apple iPhone 16 Pro 128G 沙漠鈦金屬 實體門市","p":22000,"v":"iPhone 16 Pro","c":"128GB","b":null,"g":"9.2成新","i":"https://gcs.rimg.com.tw/g2/3/cb/b0/22633365129136_698.jpg","u":"https://www.ruten.com.tw/item/show?22633365129136","s":"星星通訊二手機專門店","src":"露天市集"},{"t":"※台中北屯區通訊行※ 二手機／中古機 Apple iPhone 16 Plus","p":22500,"v":"iPhone 16 Plus","c":"128GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/b/7d/06/22606134922502_968.jpg","u":"https://www.ruten.com.tw/item/show?22606134922502","s":"台中北屯通訊行","src":"露天市集"},{"t":"《US3C》Apple iPhone 16 Plus 6.7吋 原廠公司貨 藍色 二手品","p":22900,"v":"iPhone 16 Plus","c":null,"b":null,"g":null,"i":"https://gcs.rimg.com.tw/g4/72b/d51/us3c_tw/e/d2/52/22637593710162_140.png","u":"https://www.ruten.com.tw/item/show?22637593710162","s":"US3C","src":"露天市集"},{"t":"【PChome 24h購物】Apple iPhone 16 128G 保固6個月 福利品","p":22990,"v":"iPhone 16","c":"128GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g5/047/d2f/pchome/5/53/4d/22548596575053_105.jpg","u":"https://www.ruten.com.tw/item/show?22548596575053","s":"PChome 24h 露天館","src":"露天市集"},{"t":"【炘馳通訊】iPhone 16 Plus 256G 黑色 二手機 中古機","p":23000,"v":"iPhone 16 Plus","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/7/e2/b5/22637598498485_267.jpg","u":"https://www.ruten.com.tw/item/show?22637598498485","s":"炘馳通訊","src":"露天市集"},{"t":"二手蘋果 iPhone 16 Plus 超廣角 美版 全網通 5G 雙卡手機","p":23024,"v":"iPhone 16 Plus","c":null,"b":null,"g":null,"i":"https://a.rimg.com.tw/c1/b7c/126/123456mlp/b/54/22528171129684_821.jpg","u":"https://www.ruten.com.tw/item/show?22528171129684","s":"金選","src":"露天市集"},{"t":"【PChome 24h購物】【認證福利品】Apple iPhone 16 Pro 256GB 黑色鈦","p":23490,"v":"iPhone 16 Pro","c":"256GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g5/047/d2f/pchome/7/98/5c/22637594285148_871.jpg","u":"https://www.ruten.com.tw/item/show?22637594285148","s":"PChome 24h 露天館","src":"露天市集"},{"t":"【福利品】Apple iPhone 16 Pro 128GB 6.3吋（5G）","p":23900,"v":"iPhone 16 Pro","c":"128GB","b":null,"g":"S級福利品","i":"https://shoplineimg.com/5b6971ecf9129500172ad5b4/6a6ab75d0c71e53680929568/375x.webp?source_format=jpg","u":"https://www.smart3c.com.tw/zh-hant/products/used-apple-iphone-16-pro-128gb-63inch-5g","s":"Smart3C","src":"Smart3C"},{"t":"奇機通訊（楠梓店）二手 9.5成新 Apple iPhone 16 Pro 128G 沙漠鈦金屬","p":23900,"v":"iPhone 16 Pro","c":"128GB","b":null,"g":"9.5成新","i":"https://gcs.rimg.com.tw/g2/1/69/06/22626964734214_194.jpg","u":"https://www.ruten.com.tw/item/show?22626964734214","s":"奇機7G3C","src":"露天市集"},{"t":"Apple iPhone 16 Pro 128GB 6.3吋（5G）二手機 福利品 創宇通訊","p":23900,"v":"iPhone 16 Pro","c":"128GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g4/1e9/012/smartmobile/2/ab/74/22516240250740_458.jpg","u":"https://www.ruten.com.tw/item/show?22516240250740","s":"創宇通訊","src":"露天市集"},{"t":"【PChome 24h購物】【福利品】Apple iPhone 16 Pro（128GB）黑色","p":23900,"v":"iPhone 16 Pro","c":"128GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g5/047/d2f/pchome/6/08/18/22635469767704_733.jpg","u":"https://www.ruten.com.tw/item/show?22635469767704","s":"PChome 24h 露天館","src":"露天市集"},{"t":"【PChome 24h購物】【福利品】Apple iPhone 16 256GB","p":23990,"v":"iPhone 16","c":"256GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g5/047/d2f/pchome/2/0d/0f/22531395789071_223.jpg","u":"https://www.ruten.com.tw/item/show?22531395789071","s":"PChome 24h 露天館","src":"露天市集"},{"t":"二手 Apple iPhone 16 Pro Max 256GB","p":24000,"v":"iPhone 16 Pro Max","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/3/97/68/22635502113640_691.jpg","u":"https://www.ruten.com.tw/item/show?22635502113640","s":"游政賢全方位事業","src":"露天市集"},{"t":"【無傷】Apple iPhone 16 Pro 128GB 二手機｜附線、鏡、貼｜保30天","p":24000,"v":"iPhone 16 Pro","c":"128GB","b":99,"g":null,"i":"https://a.rimg.com.tw/c1/0f1/c2c/xyxy875760/d/68/22634414459240_366.jpg","u":"https://www.ruten.com.tw/item/show?22634414459240","s":"慧亞的3C手機賣場","src":"露天市集"},{"t":"【PChome 24h購物】【福利品】Apple iPhone 16 256GB","p":24490,"v":"iPhone 16","c":"256GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g5/047/d2f/pchome/3/a4/09/22531395893257_714.jpg","u":"https://www.ruten.com.tw/item/show?22531395893257","s":"PChome 24h 露天館","src":"露天市集"},{"t":"【炘馳通訊】iPhone 16 Pro 256G 原色 二手機 中古機","p":24500,"v":"iPhone 16 Pro","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/1/6e/ba/22637641067194_594.jpg","u":"https://www.ruten.com.tw/item/show?22637641067194","s":"炘馳通訊","src":"露天市集"},{"t":"iPhone 16 Pro 128G 黑色鈦金屬 二手機【承靜數位】高雄實體店","p":24500,"v":"iPhone 16 Pro","c":"128GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/8/d0/69/22541167642729_474.jpg","u":"https://www.ruten.com.tw/item/show?22541167642729","s":"米米科技總店","src":"露天市集"},{"t":"【PChome 24h購物】【福利品】Apple iPhone 16 256GB","p":24900,"v":"iPhone 16","c":"256GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g5/047/d2f/pchome/b/9c/3b/22546451600443_729.jpg","u":"https://www.ruten.com.tw/item/show?22546451600443","s":"PChome 24h 露天館","src":"露天市集"},{"t":"【PChome 24h購物】Apple iPhone 16 256G 保固6個月 福利品","p":24990,"v":"iPhone 16","c":"256GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g5/047/d2f/pchome/4/d8/d2/22548596543698_708.jpg","u":"https://www.ruten.com.tw/item/show?22548596543698","s":"PChome 24h 露天館","src":"露天市集"},{"t":"懇得機通訊 二手機 iPhone 16 Pro 256G 銀色鈦金屬 舊機交換折抵","p":25000,"v":"iPhone 16 Pro","c":"256GB","b":92,"g":null,"i":"https://gcs.rimg.com.tw/g2/5/27/4e/22633366266702_787.jpg","u":"https://www.ruten.com.tw/item/show?22633366266702","s":"懇得機通訊","src":"露天市集"},{"t":"【炘馳通訊】iPhone 16 Pro 256G 金色 二手機 中古機","p":25500,"v":"iPhone 16 Pro","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/d/1d/db/22636581722587_891.jpg","u":"https://www.ruten.com.tw/item/show?22636581722587","s":"炘馳通訊","src":"露天市集"},{"t":"iPhone 16 Pro 128G 原色（T57-1461）保衛站認證二手機","p":25900,"v":"iPhone 16 Pro","c":"128GB","b":null,"g":null,"i":"https://shoplineimg.com/632bfb2a2a56c80081edecb0/68513f75841fd0000ce25610/375x.webp?source_format=png","u":"https://www.guardstation.com.tw/products/iphone-16pro-128g-%E5%8E%9F%E8%89%B2-20260112","s":"保衛站","src":"保衛站"},{"t":"iPhone 16 Pro 128G 白色（D134-0239）保衛站認證二手機","p":25900,"v":"iPhone 16 Pro","c":"128GB","b":null,"g":null,"i":"https://shoplineimg.com/632bfb2a2a56c80081edecb0/69563d8b77f316256b7e1fb2/375x.webp?source_format=jpeg","u":"https://www.guardstation.com.tw/products/iphone-16pro-128g-%E7%99%BD%E8%89%B2-20240517","s":"保衛站","src":"保衛站"},{"t":"iPhone 16 Pro 128G 沙漠金色（T57-1258）保衛站認證二手機","p":25900,"v":"iPhone 16 Pro","c":"128GB","b":null,"g":null,"i":"https://shoplineimg.com/632bfb2a2a56c80081edecb0/687e229ee5afbc000c30ef7c/375x.webp?source_format=JPG","u":"https://www.guardstation.com.tw/products/iphone-16-pro-256g-%E6%B2%99%E6%BC%A0%E9%87%91%E8%89%B2-20251027-1","s":"保衛站","src":"保衛站"},{"t":"潮宇認證 iPhone 16 Pro 256G 金 B級福利品 實機拍攝 店保90天","p":25900,"v":"iPhone 16 Pro","c":"256GB","b":90,"g":"福利品","i":"https://gcs.rimg.com.tw/g1/1/77/0b/22549645946635_871.jpg","u":"https://www.ruten.com.tw/item/show?22549645946635","s":"潮宇3C","src":"露天市集"},{"t":"【原裝盒】iPhone 16 Pro 256GB 沙漠金 6.3吋 實體門市 二手機","p":26000,"v":"iPhone 16 Pro","c":"256GB","b":90,"g":null,"i":"https://gcs.rimg.com.tw/g1/a/f3/3b/22603984257851_724.jpg","u":"https://www.ruten.com.tw/item/show?22603984257851","s":"美機專家","src":"露天市集"},{"t":"【聯宏3C】Apple iPhone 16 Pro 256G 黑 中古二手機（盒裝）","p":26500,"v":"iPhone 16 Pro","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/f/4b/04/22606147754756_369.jpg","u":"https://www.ruten.com.tw/item/show?22606147754756","s":"聯宏3C通信","src":"露天市集"},{"t":"Apple iPhone 16 Pro 256GB 6.3吋（5G）二手機 福利品 創宇通訊","p":26500,"v":"iPhone 16 Pro","c":"256GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g4/1e9/012/smartmobile/c/d5/60/22449364624736_949.jpg","u":"https://www.ruten.com.tw/item/show?22449364624736","s":"創宇通訊","src":"露天市集"},{"t":"【福利品】Apple iPhone 16 Pro 256GB 6.3吋（5G）","p":26500,"v":"iPhone 16 Pro","c":"256GB","b":null,"g":"S級福利品","i":"https://shoplineimg.com/5b6971ecf9129500172ad5b4/6a6ab794dddcff03a769b779/375x.webp?source_format=jpg","u":"https://www.smart3c.com.tw/zh-hant/products/used-apple-iphone-16-pro-256gb-63inch-5g","s":"Smart3C","src":"Smart3C"},{"t":"9成新 盒裝有 中古機 二手機 Apple iPhone 16 Pro Max 256GB 金色","p":26880,"v":"iPhone 16 Pro Max","c":"256GB","b":null,"g":"9成新","i":"https://gcs.rimg.com.tw/g1/3/d6/69/22542180241001_611.jpg","u":"https://www.ruten.com.tw/item/show?22542180241001","s":"萊分期","src":"露天市集"},{"t":"【PChome 24h購物】Apple iPhone 16 Pro 128G 保固6個月 福利品","p":27290,"v":"iPhone 16 Pro","c":"128GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g5/047/d2f/pchome/4/61/ff/22548596513279_302.jpg","u":"https://www.ruten.com.tw/item/show?22548596513279","s":"PChome 24h 露天館","src":"露天市集"},{"t":"【炘馳通訊】iPhone 16 Pro 512G 金色 二手機 中古機","p":27500,"v":"iPhone 16 Pro","c":"512GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/9/38/dd/22634457052381_189.jpg","u":"https://www.ruten.com.tw/item/show?22634457052381","s":"炘馳通訊","src":"露天市集"},{"t":"※台中北屯區通訊行※ 二手機／中古機 Apple iPhone 16 Pro","p":27500,"v":"iPhone 16 Pro","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/b/1e/ff/22627054499583_524.jpg","u":"https://www.ruten.com.tw/item/show?22627054499583","s":"台中北屯通訊行","src":"露天市集"},{"t":"『澄橘』Apple iPhone 16 Pro Max 256GB（6.9吋）沙漠金《二手3C》","p":27500,"v":"iPhone 16 Pro Max","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/6/75/ab/22549645225387_626.jpg","u":"https://www.ruten.com.tw/item/show?22549645225387","s":"澄橘數位 二手3C 買賣","src":"露天市集"},{"t":"【PChome 24h購物】【福利品】Apple iPhone 16 Pro（256G）白色鈦金屬","p":28100,"v":"iPhone 16 Pro","c":"256GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g5/047/d2f/pchome/2/f4/f9/22637629632761_718.jpg","u":"https://www.ruten.com.tw/item/show?22637629632761","s":"PChome 24h 露天館","src":"露天市集"},{"t":"【炘馳通訊】iPhone 16 Pro Max 256G 白色 二手機 中古機","p":28500,"v":"iPhone 16 Pro Max","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/d/1d/d0/22636581722576_793.jpg","u":"https://www.ruten.com.tw/item/show?22636581722576","s":"炘馳通訊","src":"露天市集"},{"t":"iPhone 16 Pro Max 256G 金色 6.9吋 二手機 台北 當天出貨","p":28500,"v":"iPhone 16 Pro Max","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/1/27/31/22631271998257_306.jpg","u":"https://www.ruten.com.tw/item/show?22631271998257","s":"3C瘋小姐","src":"露天市集"},{"t":"『澄橘』Apple iPhone 16 Pro Max 256GB（6.9吋）沙漠金《二手3C》","p":28500,"v":"iPhone 16 Pro Max","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/4/04/01/22540098829313_650.jpg","u":"https://www.ruten.com.tw/item/show?22540098829313","s":"澄橘數位 二手3C 買賣","src":"露天市集"},{"t":"《天地通訊》iPhone 16 Pro Max 256G 中古機 二手 9成新","p":28888,"v":"iPhone 16 Pro Max","c":"256GB","b":86,"g":"9成新","i":"https://gcs.rimg.com.tw/g2/9/47/a0/22630205080480_458.jpg","u":"https://www.ruten.com.tw/item/show?22630205080480","s":"《天地通訊》","src":"露天市集"},{"t":"Apple iPhone 16 Plus 128GB 二手機","p":28900,"v":"iPhone 16 Plus","c":null,"b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/d/8c/9a/22438749157530_568.jpg","u":"https://www.ruten.com.tw/item/show?22438749157530","s":"萊分期","src":"露天市集"},{"t":"※台中北屯區通訊行※ 二手機／中古機 Apple iPhone 16 Pro","p":29000,"v":"iPhone 16 Pro","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/b/90/e3/22636580572387_925.jpg","u":"https://www.ruten.com.tw/item/show?22636580572387","s":"台中北屯通訊行","src":"露天市集"},{"t":"【炘馳通訊】iPhone 16 Pro Max 256G 金色 二手機 中古機","p":29500,"v":"iPhone 16 Pro Max","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/4/71/5a/22637615050074_893.jpg","u":"https://www.ruten.com.tw/item/show?22637615050074","s":"炘馳通訊","src":"露天市集"},{"t":"【機況不錯】iPhone 16 Pro Max 256G 金色 6.9吋 二手機 台北","p":29500,"v":"iPhone 16 Pro Max","c":"256GB","b":null,"g":"機況良好","i":"https://gcs.rimg.com.tw/g1/8/9c/c3/22636532144323_512.jpg","u":"https://www.ruten.com.tw/item/show?22636532144323","s":"3C瘋小姐","src":"露天市集"},{"t":"Apple iPhone 16 256GB 二手機","p":29500,"v":"iPhone 16","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/e/af/91/22438749232017_498.jpg","u":"https://www.ruten.com.tw/item/show?22438749232017","s":"萊分期","src":"露天市集"},{"t":"中古機 二手機 備用機 Apple iPhone 16 Pro Max 256GB 銀色","p":29980,"v":"iPhone 16 Pro Max","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/d/8d/06/22552817363206_556.jpg","u":"https://www.ruten.com.tw/item/show?22552817363206","s":"萊分期","src":"露天市集"},{"t":"中古機 二手機 備用機 Apple iPhone 16 Pro Max 512GB 銀色","p":29980,"v":"iPhone 16 Pro Max","c":"512GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/c/eb/70/22552817321840_243.jpg","u":"https://www.ruten.com.tw/item/show?22552817321840","s":"萊分期","src":"露天市集"},{"t":"＊高雄雙大通訊＊Apple iPhone 16 Pro Max 256G【二手盒裝】","p":30000,"v":"iPhone 16 Pro Max","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/2/90/ee/22540098734318_724.jpg","u":"https://www.ruten.com.tw/item/show?22540098734318","s":"高雄雙大通訊","src":"露天市集"},{"t":"Apple iPhone 16 Pro Max 256GB 6.9吋（5G）二手機 福利品","p":30900,"v":"iPhone 16 Pro Max","c":"256GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g4/1e9/012/smartmobile/d/90/89/22449364672649_459.jpg","u":"https://www.ruten.com.tw/item/show?22449364672649","s":"創宇通訊","src":"露天市集"},{"t":"【PChome 24h購物】【福利品】Apple iPhone 16 Pro Max（256GB）","p":30900,"v":"iPhone 16 Pro Max","c":"256GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g5/047/d2f/pchome/6/08/93/22635469767827_285.jpg","u":"https://www.ruten.com.tw/item/show?22635469767827","s":"PChome 24h 露天館","src":"露天市集"},{"t":"【福利品】Apple iPhone 16 Pro Max 256GB 6.9吋（5G）","p":30900,"v":"iPhone 16 Pro Max","c":"256GB","b":null,"g":"S級福利品","i":"https://shoplineimg.com/5b6971ecf9129500172ad5b4/6a6ab7b9dcc62956159e0113/375x.webp?source_format=jpg","u":"https://www.smart3c.com.tw/zh-hant/products/used-apple-iphone-16-pro-max-256gb-69inch-5g","s":"Smart3C","src":"Smart3C"},{"t":"（星星通訊）二手 Apple iPhone 16 Pro Max 512G 沙漠鈦金屬","p":31000,"v":"iPhone 16 Pro Max","c":"512GB","b":null,"g":"9.2成新","i":"https://gcs.rimg.com.tw/g2/2/7b/52/22629147939666_984.jpg","u":"https://www.ruten.com.tw/item/show?22629147939666","s":"星星通訊二手機專門店","src":"露天市集"},{"t":"Apple iPhone 16 Plus 256GB 二手機","p":32700,"v":"iPhone 16 Plus","c":null,"b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/d/01/40/22438749121856_386.jpg","u":"https://www.ruten.com.tw/item/show?22438749121856","s":"萊分期","src":"露天市集"},{"t":"Apple iPhone 16 Pro 128GB 二手機","p":32800,"v":"iPhone 16 Pro","c":"128GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/c/20/9a/22438749064346_242.jpg","u":"https://www.ruten.com.tw/item/show?22438749064346","s":"萊分期","src":"露天市集"},{"t":"iPhone 16 Pro 512G 金色（B557-1730）保衛站認證二手機","p":32900,"v":"iPhone 16 Pro","c":"512GB","b":null,"g":null,"i":"https://shoplineimg.com/632bfb2a2a56c80081edecb0/68f8aae18aa12d000a2f3a4f/375x.webp?source_format=jpeg","u":"https://www.guardstation.com.tw/products/iphone-16-pro-512g-%E9%87%91%E8%89%B2-20260714","s":"保衛站","src":"保衛站"},{"t":"【大容量手機】iPhone 16 Pro Max 512G 金色 6.9吋 二手機 台北","p":33000,"v":"iPhone 16 Pro Max","c":"512GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/3/a8/5b/22621770235995_696.jpg","u":"https://www.ruten.com.tw/item/show?22621770235995","s":"3C瘋小姐","src":"露天市集"},{"t":"潮宇認證 iPhone 16 Pro Max 512G 金 A級福利品 實機拍攝 店保","p":33300,"v":"iPhone 16 Pro Max","c":"512GB","b":93,"g":"福利品","i":"https://gcs.rimg.com.tw/g2/3/e0/4e/22550689168462_233.jpg","u":"https://www.ruten.com.tw/item/show?22550689168462","s":"潮宇3C","src":"露天市集"},{"t":"潮宇認證 iPhone 16 Pro Max 512G 黑 A級福利品 實機拍攝 店保","p":33600,"v":"iPhone 16 Pro Max","c":"512GB","b":97,"g":"福利品","i":"https://gcs.rimg.com.tw/g1/2/c4/f5/22549656517877_276.jpg","u":"https://www.ruten.com.tw/item/show?22549656517877","s":"潮宇3C","src":"露天市集"},{"t":"【PChome 24h購物】Apple iPhone 16 Pro Max 256G 保固6個月 福利品","p":34490,"v":"iPhone 16 Pro Max","c":"256GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g5/047/d2f/pchome/5/4e/fe/22548596573950_842.jpg","u":"https://www.ruten.com.tw/item/show?22548596573950","s":"PChome 24h 露天館","src":"露天市集"},{"t":"【炘馳通訊】iPhone 16 Pro Max 1TB 原色 二手機 中古機","p":34500,"v":"iPhone 16 Pro Max","c":"1TB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/7/bc/35/22636529989685_588.jpg","u":"https://www.ruten.com.tw/item/show?22636529989685","s":"炘馳通訊","src":"露天市集"},{"t":"【PChome 24h購物】【福利品】Apple iPhone 16 Pro Max（512GB）","p":35900,"v":"iPhone 16 Pro Max","c":"512GB","b":null,"g":"福利品","i":"https://gcs.rimg.com.tw/g5/047/d2f/pchome/b/6a/2d/22637623895597_294.jpg","u":"https://www.ruten.com.tw/item/show?22637623895597","s":"PChome 24h 露天館","src":"露天市集"},{"t":"Apple iPhone 16 Pro 256GB 二手機","p":36000,"v":"iPhone 16 Pro","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/b/da/12/22438749046290_264.jpg","u":"https://www.ruten.com.tw/item/show?22438749046290","s":"萊分期","src":"露天市集"},{"t":"《US3C》Apple iPhone 16 Pro Max 6.9吋 沙漠色 二手品","p":39900,"v":"iPhone 16 Pro Max","c":null,"b":null,"g":null,"i":"https://gcs.rimg.com.tw/g4/72b/d51/us3c_tw/f/59/39/22637593744697_742.png","u":"https://www.ruten.com.tw/item/show?22637593744697","s":"US3C","src":"露天市集"},{"t":"Apple iPhone 16 512GB 二手機","p":40400,"v":"iPhone 16","c":"512GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/e/00/5a/22438749187162_508.jpg","u":"https://www.ruten.com.tw/item/show?22438749187162","s":"萊分期","src":"露天市集"},{"t":"Apple iPhone 16 Pro Max 256GB 二手機","p":40700,"v":"iPhone 16 Pro Max","c":"256GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/a/87/99/22438748959641_844.jpg","u":"https://www.ruten.com.tw/item/show?22438748959641","s":"萊分期","src":"露天市集"},{"t":"Apple iPhone 16 Plus 512GB 二手機","p":42700,"v":"iPhone 16 Plus","c":null,"b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/c/b8/e0/22438749103328_548.jpg","u":"https://www.ruten.com.tw/item/show?22438749103328","s":"萊分期","src":"露天市集"},{"t":"Apple iPhone 16 Pro 512GB 二手機","p":44300,"v":"iPhone 16 Pro","c":"512GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/b/77/e6/22438749021158_924.jpg","u":"https://www.ruten.com.tw/item/show?22438749021158","s":"萊分期","src":"露天市集"},{"t":"Apple iPhone 16 Pro Max 512GB 二手機","p":47500,"v":"iPhone 16 Pro Max","c":"512GB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/a/16/5b/22438748930651_714.jpg","u":"https://www.ruten.com.tw/item/show?22438748930651","s":"萊分期","src":"露天市集"},{"t":"Apple iPhone 16 Pro 1TB 二手機","p":52200,"v":"iPhone 16 Pro","c":"1TB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g2/b/16/fe/22438748996350_417.jpg","u":"https://www.ruten.com.tw/item/show?22438748996350","s":"萊分期","src":"露天市集"},{"t":"Apple iPhone 16 Pro Max 1TB 二手機","p":55800,"v":"iPhone 16 Pro Max","c":"1TB","b":null,"g":null,"i":"https://gcs.rimg.com.tw/g1/9/72/eb/22438748888811_401.jpg","u":"https://www.ruten.com.tw/item/show?22438748888811","s":"萊分期","src":"露天市集"}]};
+const ORDER = ["iPhone 16","iPhone 16 Plus","iPhone 16 Pro","iPhone 16 Pro Max","iPhone 16e"];
+const CAPS  = ["128GB","256GB","512GB","1TB"];
+const BANDS = [
+  {k:"~18k", lo:0, hi:18000},
+  {k:"18–25k", lo:18000, hi:25000},
+  {k:"25–35k", lo:25000, hi:35000},
+  {k:"35k+", lo:35000, hi:Infinity}
+];
+const state = {model:"all", caps:new Set(), band:null, condOnly:false, battOnly:false, srcs:new Set(), sort:"asc"};
+
+const $ = s => document.querySelector(s);
+const nt = n => n.toLocaleString("zh-TW");
+function bench(v, c){
+  const byCap = DATA.benchmarks[v];
+  if(!byCap) return null;
+  const hit = (c && byCap[c]) || byCap["*"];
+  return hit && hit.used ? hit.used : null;
+}
+function dealPct(it){ const b = bench(it.v, it.c); return b ? Math.round((b-it.p)/b*100) : null; }
+
+/* ---- header stamp ---- */
+(function(){
+  const d = new Date(DATA.updated);
+  const p = n => String(n).padStart(2,"0");
+  $("#stamp").textContent = `${d.getFullYear()}/${p(d.getMonth()+1)}/${p(d.getDate())} ${p(d.getHours())}:${p(d.getMinutes())} 更新`;
+})();
+
+/* ---- tabs ---- */
+(function(){
+  const wrap = $("#tabs");
+  const mk = (val,label,count) => {
+    const b = document.createElement("button");
+    b.className="tab"; b.type="button"; b.role="tab"; b.dataset.v=val;
+    b.setAttribute("aria-selected", String(val===state.model));
+    b.innerHTML = `${label}<span class="c num">${count}</span>`;
+    b.onclick = () => { state.model=val; [...wrap.children].forEach(c=>c.setAttribute("aria-selected",String(c.dataset.v===val))); render(); };
+    return b;
+  };
+  wrap.appendChild(mk("all","全部機型",DATA.items.length));
+  ORDER.forEach(v=>{
+    const n = DATA.items.filter(i=>i.v===v).length;
+    if(n) wrap.appendChild(mk(v,v.replace("iPhone ",""),n));
+  });
+})();
+
+/* ---- filters ---- */
+function chip(host,label,pressed,onToggle){
+  const b=document.createElement("button");
+  b.className="opt"; b.type="button"; b.textContent=label;
+  b.setAttribute("aria-pressed",String(pressed));
+  b.onclick=()=>{ onToggle(b); render(); };
+  host.appendChild(b); return b;
+}
+(function(){
+  const capHost=$("#f-cap");
+  CAPS.filter(c=>DATA.items.some(i=>i.c===c)).forEach(c=>{
+    chip(capHost,c,false,b=>{
+      const on = b.getAttribute("aria-pressed")!=="true";
+      b.setAttribute("aria-pressed",String(on));
+      on?state.caps.add(c):state.caps.delete(c);
+    });
+  });
+  const pHost=$("#f-price");
+  BANDS.forEach(bd=>{
+    chip(pHost,bd.k,false,b=>{
+      const on=b.getAttribute("aria-pressed")!=="true";
+      [...pHost.children].forEach(c=>c.setAttribute("aria-pressed","false"));
+      b.setAttribute("aria-pressed",String(on));
+      state.band = on ? bd : null;
+    });
+  });
+  const cHost=$("#f-cond");
+  chip(cHost,"有標示成色",false,b=>{const on=b.getAttribute("aria-pressed")!=="true";b.setAttribute("aria-pressed",String(on));state.condOnly=on;});
+  chip(cHost,"有標示電池",false,b=>{const on=b.getAttribute("aria-pressed")!=="true";b.setAttribute("aria-pressed",String(on));state.battOnly=on;});
+  const sHost=$("#f-src");
+  [...new Set(DATA.items.map(i=>i.src))].forEach(s=>{
+    chip(sHost,s,false,b=>{const on=b.getAttribute("aria-pressed")!=="true";b.setAttribute("aria-pressed",String(on));on?state.srcs.add(s):state.srcs.delete(s);});
+  });
+})();
+
+/* ---- benchmark table ---- */
+(function(){
+  const tb=$("#bm");
+  ORDER.forEach(v=>{
+    const byCap=DATA.benchmarks[v]; if(!byCap) return;
+    Object.keys(byCap).forEach(c=>{
+      const b=byCap[c];
+      const tr=document.createElement("tr");
+      const label=v.replace("iPhone ","")+(c==="*"?"":" "+c);
+      tr.innerHTML=`<td>${label}</td><td class="num">${b.used?"$"+nt(b.used):"—"}</td>`;
+      tb.appendChild(tr);
+    });
+  });
+})();
+
+$("#sort").onchange = e => { state.sort=e.target.value; render(); };
+
+/* ---- render ---- */
+function render(){
+  let rows = DATA.items.filter(i=>{
+    if(state.model!=="all" && i.v!==state.model) return false;
+    if(state.caps.size && !state.caps.has(i.c)) return false;
+    if(state.band && !(i.p>=state.band.lo && i.p<state.band.hi)) return false;
+    if(state.condOnly && !i.g) return false;
+    if(state.battOnly && !i.b) return false;
+    if(state.srcs.size && !state.srcs.has(i.src)) return false;
+    return true;
+  });
+  if(state.sort==="asc") rows.sort((a,b)=>a.p-b.p);
+  else if(state.sort==="desc") rows.sort((a,b)=>b.p-a.p);
+  else rows.sort((a,b)=>(dealPct(b)??-999)-(dealPct(a)??-999));
+
+  const lo = rows.length?Math.min(...rows.map(r=>r.p)):0;
+  $("#count").innerHTML = rows.length
+    ? `共 <b class="num">${rows.length}</b> 件 · 最低 <b class="num">$${nt(lo)}</b>`
+    : "";
+
+  const grid=$("#grid"); grid.innerHTML="";
+  $("#empty").hidden = rows.length>0;
+
+  rows.forEach((it,idx)=>{
+    const pct = dealPct(it);
+    const el=document.createElement("article");
+    el.className="card";
+    el.innerHTML = `
+      <div class="shot">
+        ${state.sort==="asc"&&idx<3?`<span class="rank num">#${idx+1}</span>`:""}
+        ${pct!==null&&pct>=5?`<span class="deal num">低於行情 ${pct}%</span>`:""}
+        ${it.i?`<img src="${it.i}" alt="${it.v} 商品照片" loading="lazy" referrerpolicy="no-referrer"
+              onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'ph',textContent:'無商品照片'}))">`
+             :`<span class="ph">無商品照片</span>`}
+      </div>
+      <div class="meta">
+        <span class="pill cap">${it.c||"容量未標示"}</span>
+        <span class="pill cond">${it.g||"成色未標示"}</span>
+      </div>
+      <div class="name"><span class="model">${it.v}</span>${it.t}</div>
+      <div class="stats">
+        <div class="stat"><span class="k">價格</span>
+          <span class="v num">$${nt(it.p)}</span></div>
+        <div class="stat"><span class="k">電池健康</span>
+          <span class="v num ${it.b?"batt":"muted"}">${it.b?it.b+"%":"未標示"}</span></div>
+      </div>
+      <div class="foot"><span class="src">${it.src}</span><span class="store">${it.s||""}</span></div>
+      <a class="go" href="${it.u}" target="_blank" rel="noopener noreferrer">查看賣場</a>`;
+    grid.appendChild(el);
+  });
+}
+render();
+</script>
+
+</body>
+</html>
