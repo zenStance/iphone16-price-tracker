@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-28T05:49:39+08:00",
+ "updated": "2026-09-29T07:37:27+08:00",
  "benchmarks": {
   "iPhone 16": {
    "128GB": {
@@ -90,6 +90,30 @@
    "src": "露天市集"
   },
   {
+   "t": "『澄橘』Apple iPhone 16e 128G 128GB (6.1吋) 白《二手3C 無盒裝 中古》A87976",
+   "p": 13000,
+   "v": "iPhone 16e",
+   "c": "128GB",
+   "b": null,
+   "g": null,
+   "i": "https://gcs.rimg.com.tw/g2/b/b3/94/22640769373076_665.jpg",
+   "u": "https://www.ruten.com.tw/item/show?22640769373076",
+   "s": "澄橘數位 二手3C 買賣",
+   "src": "露天市集"
+  },
+  {
+   "t": "《US3C》Apple iPhone 16e 256G 白 二手品",
+   "p": 13500,
+   "v": "iPhone 16e",
+   "c": "256GB",
+   "b": null,
+   "g": null,
+   "i": "https://gcs.rimg.com.tw/auction/main/us3c_tw/17890976778433_826.jpg",
+   "u": "https://www.ruten.com.tw/item/show?62637000007876",
+   "s": "US3C | 最有保障的 3C 福利品專",
+   "src": "露天市集"
+  },
+  {
    "t": "【炘馳通訊】iPhone 16E 128G 黑色 二手機 中古機",
    "p": 14000,
    "v": "iPhone 16e",
@@ -123,18 +147,6 @@
    "i": "https://gcs.rimg.com.tw/g2/6/58/12/22636558210066_559.jpg",
    "u": "https://www.ruten.com.tw/item/show?22636558210066",
    "s": "蘿蔔陳的賣場",
-   "src": "露天市集"
-  },
-  {
-   "t": "【艾爾巴二手】iphone 16 128G 6.1吋 A3287 白色#保固中#二手手機#屏東店70R23",
-   "p": 16500,
-   "v": "iPhone 16",
-   "c": "128GB",
-   "b": null,
-   "g": null,
-   "i": "https://gcs.rimg.com.tw/g2/3/47/4e/22639750923086_364.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22639750923086",
-   "s": "[艾爾巴數位通訊]高價收購手機筆電3C-",
    "src": "露天市集"
   },
   {
@@ -182,18 +194,6 @@
    "g": "福利品",
    "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/7/11/20/22639741734176_318.jpg",
    "u": "https://www.ruten.com.tw/item/show?22639741734176",
-   "s": "宅配滿$490免運｜ PC24h購物 露",
-   "src": "露天市集"
-  },
-  {
-   "t": "【PChome 24h購物】【PC+福利品】Apple iPhone 16 128GB (A+)綠色 R99N",
-   "p": 18490,
-   "v": "iPhone 16",
-   "c": "128GB",
-   "b": null,
-   "g": "福利品",
-   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/1/df/5d/22632313281373_990.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22632313281373",
    "s": "宅配滿$490免運｜ PC24h購物 露",
    "src": "露天市集"
   },
@@ -294,14 +294,14 @@
    "src": "露天市集"
   },
   {
-   "t": "【炘馳通訊】iPhone 16 Pro 128G 黑色 二手機 中古機 信用卡分期 舊機折抵貼換 門號折抵",
+   "t": "【炘馳通訊】iPhone 16 Pro 128G 金色 二手機 中古機 信用卡分期 舊機折抵貼換 門號折抵",
    "p": 21000,
    "v": "iPhone 16 Pro",
    "c": "128GB",
    "b": null,
    "g": null,
-   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/5/d4/a0/22639737458848_765.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22639737458848",
+   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/c/01/e8/22638702919144_935.jpg",
+   "u": "https://www.ruten.com.tw/item/show?22638702919144",
    "s": "炘馳通訊",
    "src": "露天市集"
   },
@@ -336,7 +336,7 @@
    "c": "256GB",
    "b": null,
    "g": "福利品",
-   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/9/c2/03/22548588476931_839.jpg",
+   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/9/c2/03/22548588476931_992.jpg",
    "u": "https://www.ruten.com.tw/item/show?22548588476931",
    "s": "宅配滿$490免運｜ PC24h購物 露",
    "src": "露天市集"
@@ -408,7 +408,7 @@
    "c": "128GB",
    "b": null,
    "g": "福利品",
-   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/5/53/4d/22548596575053_345.jpg",
+   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/5/53/4d/22548596575053_238.jpg",
    "u": "https://www.ruten.com.tw/item/show?22548596575053",
    "s": "宅配滿$490免運｜ PC24h購物 露",
    "src": "露天市集"
@@ -456,7 +456,7 @@
    "c": "512GB",
    "b": null,
    "g": "福利品",
-   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/9/43/e4/22639729295332_365.jpg",
+   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/9/43/e4/22639729295332_512.jpg",
    "u": "https://www.ruten.com.tw/item/show?22639729295332",
    "s": "宅配滿$490免運｜ PC24h購物 露",
    "src": "露天市集"
@@ -534,6 +534,18 @@
    "src": "露天市集"
   },
   {
+   "t": "【柏格納】iPhone 16 PRO 256G 6.3吋 白#二手機#大里中興店77128",
+   "p": 24000,
+   "v": "iPhone 16 Pro",
+   "c": "256GB",
+   "b": null,
+   "g": null,
+   "i": "https://gcs.rimg.com.tw/g5/7c4/0a6/bergner/6/0d/f4/22639751105012_124.jpg",
+   "u": "https://www.ruten.com.tw/item/show?22639751105012",
+   "s": "bergner的賣場",
+   "src": "露天市集"
+  },
+  {
    "t": "【炘馳通訊】Apple iPhone 16 Pro 256G 金色 二手機 中古機",
    "p": 24500,
    "v": "iPhone 16 Pro",
@@ -555,18 +567,6 @@
    "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/9/b4/67/22639751344231_402.jpg",
    "u": "https://www.ruten.com.tw/item/show?22639751344231",
    "s": "炘馳通訊",
-   "src": "露天市集"
-  },
-  {
-   "t": "【柏格納】iPhone 16 PRO 256G 6.3吋 白#二手機#大里中興店77128",
-   "p": 24500,
-   "v": "iPhone 16 Pro",
-   "c": "256GB",
-   "b": null,
-   "g": null,
-   "i": "https://gcs.rimg.com.tw/g5/7c4/0a6/bergner/6/0d/f4/22639751105012_124.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22639751105012",
-   "s": "bergner的賣場",
    "src": "露天市集"
   },
   {
@@ -612,7 +612,7 @@
    "c": "128GB",
    "b": null,
    "g": "福利品",
-   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/3/e3/1e/22548573412126_838.jpg",
+   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/3/e3/1e/22548573412126_719.jpg",
    "u": "https://www.ruten.com.tw/item/show?22548573412126",
    "s": "宅配滿$490免運｜ PC24h購物 露",
    "src": "露天市集"
@@ -678,18 +678,6 @@
    "src": "保衛站"
   },
   {
-   "t": "iPhone 16Pro 128G 沙漠金色 (O777-0890)",
-   "p": 25900,
-   "v": "iPhone 16 Pro",
-   "c": "128GB",
-   "b": null,
-   "g": null,
-   "i": "https://shoplineimg.com/632bfb2a2a56c80081edecb0/67ff99534b3041000f1f907c/375x.webp?source_format=png",
-   "u": "https://www.guardstation.com.tw/products/iphone-16pro-128g-沙漠金-20260328",
-   "s": "保衛站",
-   "src": "保衛站"
-  },
-  {
    "t": "【聯宏3C】Apple Iphone16 Pro 256G-黑 中古二手機(盒裝)",
    "p": 26500,
    "v": "iPhone 16 Pro",
@@ -732,7 +720,7 @@
    "c": "128GB",
    "b": null,
    "g": "福利品",
-   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/4/b2/19/22548573465113_338.jpg",
+   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/4/b2/19/22548573465113_843.jpg",
    "u": "https://www.ruten.com.tw/item/show?22548573465113",
    "s": "宅配滿$490免運｜ PC24h購物 露",
    "src": "露天市集"
@@ -756,7 +744,7 @@
    "c": "128GB",
    "b": null,
    "g": "福利品",
-   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/4/61/ff/22548596513279_181.jpg",
+   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/4/61/ff/22548596513279_925.jpg",
    "u": "https://www.ruten.com.tw/item/show?22548596513279",
    "s": "宅配滿$490免運｜ PC24h購物 露",
    "src": "露天市集"
@@ -822,6 +810,18 @@
    "src": "露天市集"
   },
   {
+   "t": "【炘馳通訊】IPHONE 16 PRO MAX 256G 白色 二手機 中古機",
+   "p": 28500,
+   "v": "iPhone 16 Pro Max",
+   "c": "256GB",
+   "b": null,
+   "g": null,
+   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/9/b4/39/22639751344185_153.jpg",
+   "u": "https://www.ruten.com.tw/item/show?22639751344185",
+   "s": "炘馳通訊",
+   "src": "露天市集"
+  },
+  {
    "t": "【炘馳通訊】iPhone 16 Pro Max 256G 白色 二手機 中古機 信用卡分期 舊機折抵貼換 門號折抵",
    "p": 28500,
    "v": "iPhone 16 Pro Max",
@@ -843,18 +843,6 @@
    "i": "https://gcs.rimg.com.tw/g1/4/04/01/22540098829313_650.jpg",
    "u": "https://www.ruten.com.tw/item/show?22540098829313",
    "s": "澄橘數位 二手3C 買賣",
-   "src": "露天市集"
-  },
-  {
-   "t": "【炘馳通訊】IPHONE 16 PRO MAX 256G 白色 二手機 中古機",
-   "p": 28500,
-   "v": "iPhone 16 Pro Max",
-   "c": "256GB",
-   "b": null,
-   "g": null,
-   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/9/b4/39/22639751344185_153.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22639751344185",
-   "s": "炘馳通訊",
    "src": "露天市集"
   },
   {
@@ -942,38 +930,26 @@
    "src": "露天市集"
   },
   {
-   "t": "【PChome 24h購物】【福利品】iPhone 16 Plus 256GB R99N",
-   "p": 29000,
-   "v": "iPhone 16 Plus",
-   "c": "256GB",
-   "b": null,
-   "g": "福利品",
-   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/4/b3/c4/22548573465540_134.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22548573465540",
-   "s": "宅配滿$490免運｜ PC24h購物 露",
-   "src": "露天市集"
-  },
-  {
-   "t": "【炘馳通訊】iPhone 16 Pro Max 256G 原色 二手機 中古機 信用卡分期 舊機折抵貼換 門號折抵",
-   "p": 29500,
-   "v": "iPhone 16 Pro Max",
-   "c": "256GB",
-   "b": null,
-   "g": null,
-   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/5/d4/5d/22639737458781_351.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22639737458781",
-   "s": "炘馳通訊",
-   "src": "露天市集"
-  },
-  {
    "t": "【炘馳通訊】IPHONE 16 PRO MAX 256G 金色 二手機 中古機",
    "p": 29500,
    "v": "iPhone 16 Pro Max",
    "c": "256GB",
    "b": null,
    "g": null,
-   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/9/b4/50/22639751344208_702.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22639751344208",
+   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/9/b4/44/22639751344196_674.jpg",
+   "u": "https://www.ruten.com.tw/item/show?22639751344196",
+   "s": "炘馳通訊",
+   "src": "露天市集"
+  },
+  {
+   "t": "【炘馳通訊】iPhone 16 Pro Max 256G 白色 二手機 中古機",
+   "p": 29500,
+   "v": "iPhone 16 Pro Max",
+   "c": "256GB",
+   "b": null,
+   "g": null,
+   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/9/b4/23/22639751344163_840.jpg",
+   "u": "https://www.ruten.com.tw/item/show?22639751344163",
    "s": "炘馳通訊",
    "src": "露天市集"
   },
@@ -996,7 +972,7 @@
    "c": "256GB",
    "b": null,
    "g": "福利品",
-   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/5/21/99/22548596562329_447.jpg",
+   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/5/21/99/22548596562329_269.jpg",
    "u": "https://www.ruten.com.tw/item/show?22548596562329",
    "s": "宅配滿$490免運｜ PC24h購物 露",
    "src": "露天市集"
@@ -1182,6 +1158,18 @@
    "src": "保衛站"
   },
   {
+   "t": "iPhone 16 Pro Max 256G 原色 (O777-0927)",
+   "p": 32900,
+   "v": "iPhone 16 Pro Max",
+   "c": "256GB",
+   "b": null,
+   "g": null,
+   "i": "https://shoplineimg.com/632bfb2a2a56c80081edecb0/6ab26888ebc3bac240afb5fb/375x.webp?source_format=png",
+   "u": "https://www.guardstation.com.tw/products/iphone-16-pro-max-256g-原色-20260922",
+   "s": "保衛站",
+   "src": "保衛站"
+  },
+  {
    "t": "【PChome 24h購物】【福利品】iPhone 16 Pro 512GB R99N",
    "p": 33200,
    "v": "iPhone 16 Pro",
@@ -1224,7 +1212,7 @@
    "c": "256GB",
    "b": null,
    "g": "福利品",
-   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/5/4e/fe/22548596573950_424.jpg",
+   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/5/4e/fe/22548596573950_326.jpg",
    "u": "https://www.ruten.com.tw/item/show?22548596573950",
    "s": "宅配滿$490免運｜ PC24h購物 露",
    "src": "露天市集"
@@ -1236,7 +1224,7 @@
    "c": "256GB",
    "b": null,
    "g": "福利品",
-   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/e/6a/bd/22603991825085_719.jpg",
+   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/e/6a/bd/22603991825085_273.jpg",
    "u": "https://www.ruten.com.tw/item/show?22603991825085",
    "s": "宅配滿$490免運｜ PC24h購物 露",
    "src": "露天市集"
@@ -1248,7 +1236,7 @@
    "c": "512GB",
    "b": null,
    "g": "福利品",
-   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/4/7c/e9/22620705985769_255.jpg",
+   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/4/7c/e9/22620705985769_694.jpg",
    "u": "https://www.ruten.com.tw/item/show?22620705985769",
    "s": "宅配滿$490免運｜ PC24h購物 露",
    "src": "露天市集"
@@ -1272,7 +1260,7 @@
    "c": "512GB",
    "b": null,
    "g": "福利品",
-   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/5/44/67/22547510246503_423.jpg",
+   "i": "https://gcs.rimg.com.tw/g5/047/d2f/pchome/5/44/67/22547510246503_653.jpg",
    "u": "https://www.ruten.com.tw/item/show?22547510246503",
    "s": "宅配滿$490免運｜ PC24h購物 露",
    "src": "露天市集"
