@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T06:28:17+08:00",
+ "updated": "2026-11-09T06:38:17+08:00",
  "benchmarks": {
   "iPhone 16": {
    "128GB": {
@@ -112,18 +112,6 @@
    "u": "https://www.ruten.com.tw/item/show?22644035005214",
    "s": "炘馳通訊",
    "src": "露天市集"
-  },
-  {
-   "t": "iPhone 16e 256G 黑色 (B557-1758)",
-   "p": 15900,
-   "v": "iPhone 16e",
-   "c": "256GB",
-   "b": null,
-   "g": null,
-   "i": "https://shoplineimg.com/632bfb2a2a56c80081edecb0/67e51685812502000e5e745f/375x.webp?source_format=jpg",
-   "u": "https://www.guardstation.com.tw/products/iphone-16e-256g-黑色-20261007",
-   "s": "保衛站",
-   "src": "保衛站"
   },
   {
    "t": "【炘馳通訊】iPhone 16 128G 白色 二手機 中古機 信用卡分期 舊機折抵貼換 門號折抵",
@@ -1698,6 +1686,18 @@
    "src": "露天市集"
   },
   {
+   "t": "懇得機通訊 二手機 iPhone 16 Pro Max 256G 沙漠色 金色16PM 6.9吋【216】",
+   "p": 28500,
+   "v": "iPhone 16 Pro Max",
+   "c": "256GB",
+   "b": null,
+   "g": null,
+   "i": "https://gcs.rimg.com.tw/g1/a/9c/59/22645122989145_361.jpg",
+   "u": "https://www.ruten.com.tw/item/show?22645122989145",
+   "s": "懇得機通訊-高雄二手機-舊機買賣交換收購",
+   "src": "露天市集"
+  },
+  {
    "t": "【健康度90%】Apple iPhone 16 Pro Max 256GB 二手機 舊機折抵 實體店面 #C0942",
    "p": 28500,
    "v": "iPhone 16 Pro Max",
@@ -1707,18 +1707,6 @@
    "i": "https://a.rimg.com.tw/c1/0f1/c2c/xyxy875760/0/76/22640802095222_799.jpg",
    "u": "https://www.ruten.com.tw/item/show?22640802095222",
    "s": "慧亞的3C手機賣場",
-   "src": "露天市集"
-  },
-  {
-   "t": "懇得機通訊 二手機 iPhone 16 Pro Max 256G 黑色16PM 6.9吋 ios 27.0【084】",
-   "p": 28500,
-   "v": "iPhone 16 Pro Max",
-   "c": "256GB",
-   "b": null,
-   "g": null,
-   "i": "https://gcs.rimg.com.tw/g2/4/65/dc/22640800351708_925.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22640800351708",
-   "s": "懇得機通訊-高雄二手機-舊機買賣交換收購",
    "src": "露天市集"
   },
   {
@@ -1878,14 +1866,14 @@
    "src": "露天市集"
   },
   {
-   "t": "【炘馳通訊】iPhone 16 Pro Max 512G 銀色 二手機 中古機 信用卡分期 舊機折抵貼換 門號折抵",
+   "t": "【炘馳通訊】iPhone 16 Pro Max 512G 金色 二手機 中古機 信用卡分期 舊機折抵貼換 門號折抵",
    "p": 29500,
    "v": "iPhone 16 Pro Max",
    "c": "512GB",
    "b": null,
    "g": null,
-   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/3/fe/7c/22643999530620_373.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22643999530620",
+   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/f/92/71/22645125411441_339.jpg",
+   "u": "https://www.ruten.com.tw/item/show?22645125411441",
    "s": "炘馳通訊",
    "src": "露天市集"
   },
@@ -2166,18 +2154,6 @@
    "src": "保衛站"
   },
   {
-   "t": "iPhone 16 Pro Max 256G 沙鈦色 (W324-0469)",
-   "p": 31900,
-   "v": "iPhone 16 Pro Max",
-   "c": "256GB",
-   "b": null,
-   "g": null,
-   "i": "https://shoplineimg.com/632bfb2a2a56c80081edecb0/674e85f762d8d7000e84e548/375x.webp?source_format=png",
-   "u": "https://www.guardstation.com.tw/products/iphone-16-pro-max-256g-沙鈦色-20261012",
-   "s": "保衛站",
-   "src": "保衛站"
-  },
-  {
    "t": "iPhone 16 Pro Max 256G 白色 (W324-0477)",
    "p": 31900,
    "v": "iPhone 16 Pro Max",
@@ -2186,6 +2162,18 @@
    "g": null,
    "i": "https://shoplineimg.com/632bfb2a2a56c80081edecb0/68a443eb66e552000e57e962/375x.webp?source_format=jpg",
    "u": "https://www.guardstation.com.tw/products/iphone-16-pro-max-256g-白色-20261019",
+   "s": "保衛站",
+   "src": "保衛站"
+  },
+  {
+   "t": "iPhone 16 Pro Max 256G 沙鈦色 (W324-0469)",
+   "p": 31900,
+   "v": "iPhone 16 Pro Max",
+   "c": "256GB",
+   "b": null,
+   "g": null,
+   "i": "https://shoplineimg.com/632bfb2a2a56c80081edecb0/674e85f762d8d7000e84e548/375x.webp?source_format=png",
+   "u": "https://www.guardstation.com.tw/products/iphone-16-pro-max-256g-沙鈦色-20261012",
    "s": "保衛站",
    "src": "保衛站"
   },
@@ -2368,6 +2356,18 @@
    "u": "https://www.ruten.com.tw/item/show?22622798039369",
    "s": "宅配滿$490免運｜ PC24h購物 露",
    "src": "露天市集"
+  },
+  {
+   "t": "iPhone 16 Pro Max 512G 白色 (K323-0773)",
+   "p": 35900,
+   "v": "iPhone 16 Pro Max",
+   "c": "512GB",
+   "b": null,
+   "g": null,
+   "i": "https://shoplineimg.com/632bfb2a2a56c80081edecb0/6ad06509783e3429eefc6149/375x.webp?source_format=png",
+   "u": "https://www.guardstation.com.tw/products/iphone-16-pro-max-512g-白色-20261027",
+   "s": "保衛站",
+   "src": "保衛站"
   },
   {
    "t": "【PChome 24h購物】【福利品】Apple iPhone 16 Pro 智慧型手機 R99N",
