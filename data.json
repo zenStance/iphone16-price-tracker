@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T06:38:17+08:00",
+ "updated": "2026-11-10T09:51:16+08:00",
  "benchmarks": {
   "iPhone 16": {
    "128GB": {
@@ -2094,18 +2094,6 @@
    "src": "Smart3C"
   },
   {
-   "t": "『澄橘』Apple iPhone 16 Pro Max 512G 512GB (6.9吋) 白《二手》A88326",
-   "p": 31000,
-   "v": "iPhone 16 Pro Max",
-   "c": "512GB",
-   "b": null,
-   "g": null,
-   "i": "https://gcs.rimg.com.tw/g1/8/d4/d1/22642893599953_117.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22642893599953",
-   "s": "澄橘數位 二手3C 買賣",
-   "src": "露天市集"
-  },
-  {
    "t": "【原盒序】iPhone 16 Pro Max 512G 沙漠金 6.9吋 蘋果 二手機 實體店面 永和 Q0743",
    "p": 31700,
    "v": "iPhone 16 Pro Max",
@@ -2154,18 +2142,6 @@
    "src": "保衛站"
   },
   {
-   "t": "iPhone 16 Pro Max 256G 白色 (W324-0477)",
-   "p": 31900,
-   "v": "iPhone 16 Pro Max",
-   "c": "256GB",
-   "b": null,
-   "g": null,
-   "i": "https://shoplineimg.com/632bfb2a2a56c80081edecb0/68a443eb66e552000e57e962/375x.webp?source_format=jpg",
-   "u": "https://www.guardstation.com.tw/products/iphone-16-pro-max-256g-白色-20261019",
-   "s": "保衛站",
-   "src": "保衛站"
-  },
-  {
    "t": "iPhone 16 Pro Max 256G 沙鈦色 (W324-0469)",
    "p": 31900,
    "v": "iPhone 16 Pro Max",
@@ -2174,6 +2150,18 @@
    "g": null,
    "i": "https://shoplineimg.com/632bfb2a2a56c80081edecb0/674e85f762d8d7000e84e548/375x.webp?source_format=png",
    "u": "https://www.guardstation.com.tw/products/iphone-16-pro-max-256g-沙鈦色-20261012",
+   "s": "保衛站",
+   "src": "保衛站"
+  },
+  {
+   "t": "iPhone 16 Pro Max 256G 白色 (W324-0477)",
+   "p": 31900,
+   "v": "iPhone 16 Pro Max",
+   "c": "256GB",
+   "b": null,
+   "g": null,
+   "i": "https://shoplineimg.com/632bfb2a2a56c80081edecb0/68a443eb66e552000e57e962/375x.webp?source_format=jpg",
+   "u": "https://www.guardstation.com.tw/products/iphone-16-pro-max-256g-白色-20261019",
    "s": "保衛站",
    "src": "保衛站"
   },
