@@ -1,47 +1,47 @@
 {
- "updated": "2026-11-12T09:15:18+08:00",
+ "updated": "2026-11-13T07:57:25+08:00",
  "benchmarks": {
   "iPhone 16": {
    "128GB": {
-    "used": 18098,
-    "retail": 25990
+    "used": 17875,
+    "retail": 26490
    }
   },
   "iPhone 16 Plus": {
    "128GB": {
-    "used": 20918,
-    "retail": 29990
+    "used": 20339,
+    "retail": 30490
    },
    "256GB": {
-    "used": 22725,
-    "retail": 32990
+    "used": 22709,
+    "retail": 33490
    },
    "512GB": {
-    "used": null,
+    "used": 26500,
     "retail": 39390
    }
   },
   "iPhone 16 Pro": {
    "128GB": {
-    "used": 22877,
-    "retail": 29790
+    "used": 21510,
+    "retail": 32990
    },
    "256GB": {
-    "used": 26068,
-    "retail": 35090
+    "used": 23841,
+    "retail": 35490
    },
    "512GB": {
-    "used": 30186,
+    "used": 25993,
     "retail": 38500
    },
    "1TB": {
-    "used": 33000,
+    "used": 27433,
     "retail": 42990
    }
   },
   "iPhone 16 Pro Max": {
    "1TB": {
-    "used": 34750,
+    "used": 33648,
     "retail": 53000
    }
   },
@@ -87,30 +87,6 @@
    "i": "https://gcs.rimg.com.tw/g4/3f7/78f/elbad0973/e/a8/0b/22643951994891_709.jpg",
    "u": "https://www.ruten.com.tw/item/show?22643951994891",
    "s": "[艾爾巴數位通訊] 高價收購手機筆電3C",
-   "src": "露天市集"
-  },
-  {
-   "t": "[崴勝3C] 二手九成新無傷 APPLE IPHONE 16E 128G 100% 96 次",
-   "p": 14500,
-   "v": "iPhone 16e",
-   "c": "128GB",
-   "b": null,
-   "g": null,
-   "i": "https://gcs.rimg.com.tw/g1/2/f3/4b/22642900554571_460.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22642900554571",
-   "s": "崴勝3C通訊",
-   "src": "露天市集"
-  },
-  {
-   "t": "【炘馳通訊】iPhone 16E 256G 黑色 二手機 中古機 信用卡分期 舊機折抵貼換 門號折抵",
-   "p": 15500,
-   "v": "iPhone 16e",
-   "c": "256GB",
-   "b": null,
-   "g": null,
-   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/1/4b/1e/22644035005214_954.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22644035005214",
-   "s": "炘馳通訊",
    "src": "露天市集"
   },
   {
@@ -306,6 +282,18 @@
    "src": "露天市集"
   },
   {
+   "t": "【炘馳通訊】iPhone 16 Pro 128G 金色 二手機 中古機 信用卡分期 舊機折抵貼換 門號折抵",
+   "p": 19000,
+   "v": "iPhone 16 Pro",
+   "c": "128GB",
+   "b": null,
+   "g": null,
+   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/f/92/92/22645125411474_602.jpg",
+   "u": "https://www.ruten.com.tw/item/show?22645125411474",
+   "s": "炘馳通訊",
+   "src": "露天市集"
+  },
+  {
    "t": "Apple iPhone 16 128GB 可免 信用卡分期 現金分期 高價回收中古機 i14 I15 16萊分期 0",
    "p": 19000,
    "v": "iPhone 16",
@@ -342,18 +330,6 @@
    "src": "露天市集"
   },
   {
-   "t": "【炘馳通訊】iPhone 16 Pro 128G 金色 二手機 中古機 信用卡分期 舊機折抵貼換 門號折抵",
-   "p": 19500,
-   "v": "iPhone 16 Pro",
-   "c": "128GB",
-   "b": null,
-   "g": null,
-   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/f/92/92/22645125411474_602.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22645125411474",
-   "s": "炘馳通訊",
-   "src": "露天市集"
-  },
-  {
    "t": "【樂曄通訊】二手9.8成新 Apple iPhone 16 512GB 白色 原機盒裝 外觀無傷 使用正常 健康度99%",
    "p": 19500,
    "v": "iPhone 16",
@@ -375,6 +351,18 @@
    "i": "https://gcs.rimg.com.tw/g1/b/cf/d3/22639708490707_182.jpg",
    "u": "https://www.ruten.com.tw/item/show?22639708490707",
    "s": "星星通訊二手機專門店",
+   "src": "露天市集"
+  },
+  {
+   "t": "【炘馳通訊】iPhone 16 Pro 128G 金色 二手機 中古機 信用卡分期 舊機折抵貼換 門號折抵",
+   "p": 19500,
+   "v": "iPhone 16 Pro",
+   "c": "128GB",
+   "b": null,
+   "g": null,
+   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/4/25/eb/22632315527659_356.jpg",
+   "u": "https://www.ruten.com.tw/item/show?22632315527659",
+   "s": "炘馳通訊",
    "src": "露天市集"
   },
   {
@@ -423,18 +411,6 @@
    "i": "https://gcs.rimg.com.tw/g1/2/86/7d/22605095196285_547.jpg",
    "u": "https://www.ruten.com.tw/item/show?22605095196285",
    "s": "sky166662的賣場",
-   "src": "露天市集"
-  },
-  {
-   "t": "【炘馳通訊】iPhone 16 Pro 128G 金色 二手機 中古機 信用卡分期 舊機折抵貼換 門號折抵",
-   "p": 20000,
-   "v": "iPhone 16 Pro",
-   "c": "128GB",
-   "b": null,
-   "g": null,
-   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/4/25/eb/22632315527659_356.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22632315527659",
-   "s": "炘馳通訊",
    "src": "露天市集"
   },
   {
@@ -534,14 +510,14 @@
    "src": "露天市集"
   },
   {
-   "t": "【炘馳通訊】iPhone 16 Pro 128G 金色 二手機 中古機 信用卡分期 舊機折抵貼換 門號折抵",
+   "t": "【炘馳通訊】iPhone 16 Pro 256G 金色 二手機 中古機 信用卡分期 舊機折抵貼換 門號折抵",
    "p": 21000,
    "v": "iPhone 16 Pro",
-   "c": "128GB",
+   "c": "256GB",
    "b": null,
    "g": null,
-   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/d/3a/6a/22634448926314_558.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22634448926314",
+   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/f/92/87/22645125411463_248.jpg",
+   "u": "https://www.ruten.com.tw/item/show?22645125411463",
    "s": "炘馳通訊",
    "src": "露天市集"
   },
@@ -555,18 +531,6 @@
    "i": "https://gcs.rimg.com.tw/g4/3f7/78f/elbad0973/b/55/2f/22645114647855_148.jpg",
    "u": "https://www.ruten.com.tw/item/show?22645114647855",
    "s": "[艾爾巴數位通訊] 高價收購手機筆電3C",
-   "src": "露天市集"
-  },
-  {
-   "t": "【炘馳通訊】iPhone 16 Pro 256G 金色 二手機 中古機 信用卡分期 舊機折抵貼換 門號折抵",
-   "p": 21500,
-   "v": "iPhone 16 Pro",
-   "c": "256GB",
-   "b": null,
-   "g": null,
-   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/f/92/87/22645125411463_248.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22645125411463",
-   "s": "炘馳通訊",
    "src": "露天市集"
   },
   {
@@ -618,6 +582,18 @@
    "src": "露天市集"
   },
   {
+   "t": "【炘馳通訊】iPhone 16 Pro 256G 金色 二手機 中古機 信用卡分期 舊機折抵貼換 門號折抵",
+   "p": 21500,
+   "v": "iPhone 16 Pro",
+   "c": "256GB",
+   "b": null,
+   "g": null,
+   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/d/e1/94/22646146613652_314.jpg",
+   "u": "https://www.ruten.com.tw/item/show?22646146613652",
+   "s": "炘馳通訊",
+   "src": "露天市集"
+  },
+  {
    "t": "※台中北屯區通訊行※請詳閱商品說明 二手機/中古機/蘋果 Apple iPhone 16 Pro 256GB 16Pro",
    "p": 21900,
    "v": "iPhone 16 Pro",
@@ -642,14 +618,14 @@
    "src": "露天市集"
   },
   {
-   "t": "【炘馳通訊】iPhone 16 Pro 256G 金色 二手機 中古機 信用卡分期 舊機折抵貼換 門號折抵",
+   "t": "【炘馳通訊】iPhone 16 Pro 256G 原色 二手機 中古機 信用卡分期 舊機折抵貼換 門號折抵",
    "p": 22000,
    "v": "iPhone 16 Pro",
    "c": "256GB",
    "b": null,
    "g": null,
-   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/d/e1/94/22646146613652_314.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22646146613652",
+   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/1/be/a4/22642937175716_346.jpg",
+   "u": "https://www.ruten.com.tw/item/show?22642937175716",
    "s": "炘馳通訊",
    "src": "露天市集"
   },
@@ -942,18 +918,6 @@
    "src": "露天市集"
   },
   {
-   "t": "【艾爾巴二手】IPHONE 16 PRO 256G A3293 金 6.3吋#二手手機#漢口店42KJ6",
-   "p": 24000,
-   "v": "iPhone 16 Pro",
-   "c": "256GB",
-   "b": null,
-   "g": null,
-   "i": "https://gcs.rimg.com.tw/g4/3f7/78f/elbad0973/8/76/a8/22646137869992_129.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22646137869992",
-   "s": "[艾爾巴數位通訊] 高價收購手機筆電3C",
-   "src": "露天市集"
-  },
-  {
    "t": "【原況出售】iPhone 16 PRO 256G 金色 6.3吋 蘋果 二手機 台北 行天宮 當天出貨 J7238",
    "p": 24000,
    "v": "iPhone 16 Pro",
@@ -1230,6 +1194,18 @@
    "src": "露天市集"
   },
   {
+   "t": "【炘馳通訊】iPhone 16 Pro Max 256G 金色 二手機 中古機 信用卡分期 舊機折抵貼換 門號折抵",
+   "p": 25500,
+   "v": "iPhone 16 Pro Max",
+   "c": "256GB",
+   "b": null,
+   "g": null,
+   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/1/4b/07/22644035005191_129.jpg",
+   "u": "https://www.ruten.com.tw/item/show?22644035005191",
+   "s": "炘馳通訊",
+   "src": "露天市集"
+  },
+  {
    "t": "【PChome 24h購物】【福利品】Apple iPhone 16 Pro (128GB) L1 原廠盒裝 白色鈦金屬",
    "p": 25500,
    "v": "iPhone 16 Pro",
@@ -1240,18 +1216,6 @@
    "u": "https://www.ruten.com.tw/item/show?22645115810768",
    "s": "宅配滿$490免運｜ PC24h購物 露",
    "src": "露天市集"
-  },
-  {
-   "t": "iPhone 16plus 256G 黑色 (B557-1756)",
-   "p": 25500,
-   "v": "iPhone 16 Plus",
-   "c": "256GB",
-   "b": null,
-   "g": null,
-   "i": "https://shoplineimg.com/632bfb2a2a56c80081edecb0/674e85fefb2f3500119dc201/375x.webp?source_format=png",
-   "u": "https://www.guardstation.com.tw/products/iphone-16plus-256g-黑-20261007",
-   "s": "保衛站",
-   "src": "保衛站"
   },
   {
    "t": "台灣二手貨 Apple iPhone 16 Pro Max 256G (6.9吋) 沙漠金",
@@ -1314,18 +1278,6 @@
    "src": "露天市集"
   },
   {
-   "t": "【炘馳通訊】iPhone 16 Pro Max 256G 金色 二手機 中古機 信用卡分期 舊機折抵貼換 門號折抵",
-   "p": 26000,
-   "v": "iPhone 16 Pro Max",
-   "c": "256GB",
-   "b": null,
-   "g": null,
-   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/1/4b/07/22644035005191_129.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22644035005191",
-   "s": "炘馳通訊",
-   "src": "露天市集"
-  },
-  {
    "t": "【艾爾巴二手】IPHONE 16 PRO MAX 256G A3296 原鈦 6.9吋#二手手機#漢口店RVVTH",
    "p": 26000,
    "v": "iPhone 16 Pro Max",
@@ -1338,18 +1290,6 @@
    "src": "露天市集"
   },
   {
-   "t": "『澄橘』Apple iPhone 16 PRO 512G 512GB (6.3吋) 白《二手3C 歡迎折抵》A88971",
-   "p": 26000,
-   "v": "iPhone 16 Pro",
-   "c": "512GB",
-   "b": null,
-   "g": null,
-   "i": "https://gcs.rimg.com.tw/g2/c/8c/ec/22643007089900_138.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22643007089900",
-   "s": "澄橘數位 二手3C 買賣",
-   "src": "露天市集"
-  },
-  {
    "t": "iPhone 16 Pro Max 256G 原色鈦金屬 二手機 米米科技總店【承靜】高雄實體店 可出租 L86304",
    "p": 26000,
    "v": "iPhone 16 Pro Max",
@@ -1359,6 +1299,18 @@
    "i": "https://gcs.rimg.com.tw/g1/b/a4/17/22643997934615_941.jpg",
    "u": "https://www.ruten.com.tw/item/show?22643997934615",
    "s": "米米科技總店 （承靜數位）",
+   "src": "露天市集"
+  },
+  {
+   "t": "【炘馳通訊】iPhone 16 Pro Max 256G 白色 二手機 中古機 信用卡分期 舊機折抵貼換 門號折抵",
+   "p": 26000,
+   "v": "iPhone 16 Pro Max",
+   "c": "256GB",
+   "b": null,
+   "g": null,
+   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/d/1d/d0/22636581722576_793.jpg",
+   "u": "https://www.ruten.com.tw/item/show?22636581722576",
+   "s": "炘馳通訊",
    "src": "露天市集"
   },
   {
@@ -1539,18 +1491,6 @@
    "i": "https://gcs.rimg.com.tw/g2/8/8b/16/22640817400598_139.jpg",
    "u": "https://www.ruten.com.tw/item/show?22640817400598",
    "s": "3C瘋小姐｜二手手機收購買賣",
-   "src": "露天市集"
-  },
-  {
-   "t": "【炘馳通訊】IPHONE 16 PRO MAX 256G 金色 二手機 中古機",
-   "p": 27000,
-   "v": "iPhone 16 Pro Max",
-   "c": "256GB",
-   "b": null,
-   "g": null,
-   "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/9/b4/44/22639751344196_674.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22639751344196",
-   "s": "炘馳通訊",
    "src": "露天市集"
   },
   {
@@ -2190,18 +2130,6 @@
    "src": "保衛站"
   },
   {
-   "t": "iPhone 16 Pro max 256G 金色 (AB104-0044)",
-   "p": 31900,
-   "v": "iPhone 16 Pro Max",
-   "c": "256GB",
-   "b": null,
-   "g": null,
-   "i": "https://shoplineimg.com/632bfb2a2a56c80081edecb0/68f1dabd5504e0000ce02f3a/375x.webp?source_format=png",
-   "u": "https://www.guardstation.com.tw/products/iphone-16promax-256g-金色-20261005",
-   "s": "保衛站",
-   "src": "保衛站"
-  },
-  {
    "t": "iPhone 16 Pro 512G 金色 (B557-1730)",
    "p": 31900,
    "v": "iPhone 16 Pro",
@@ -2490,7 +2418,5 @@
    "src": "露天市集"
   }
  ],
- "errors": [
-  "SOGI: 405 Client Error: Not Allowed for url: https://www.sogi.com.tw/brands/Apple/116"
- ]
+ "errors": []
 }
