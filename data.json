@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T06:50:59+08:00",
+ "updated": "2026-11-16T07:18:26+08:00",
  "benchmarks": {
   "iPhone 16": {
    "128GB": {
@@ -13,7 +13,7 @@
     "retail": 30490
    },
    "256GB": {
-    "used": 22800,
+    "used": 22745,
     "retail": 33490
    },
    "512GB": {
@@ -27,11 +27,11 @@
     "retail": 32990
    },
    "256GB": {
-    "used": 23842,
+    "used": 23830,
     "retail": 35490
    },
    "512GB": {
-    "used": 25993,
+    "used": 25942,
     "retail": 38500
    },
    "1TB": {
@@ -41,7 +41,7 @@
   },
   "iPhone 16 Pro Max": {
    "1TB": {
-    "used": 33861,
+    "used": 34127,
     "retail": 53000
    }
   },
@@ -786,6 +786,18 @@
    "src": "露天市集"
   },
   {
+   "t": "【艾爾巴二手】iPhone 16 Pro 512GB A3293 6.3'' 白 #二手手機#桃園店9XP4G",
+   "p": 23300,
+   "v": "iPhone 16 Pro",
+   "c": "512GB",
+   "b": null,
+   "g": null,
+   "i": "https://gcs.rimg.com.tw/g4/3f7/78f/elbad0973/2/4f/7a/22642936164218_231.jpg",
+   "u": "https://www.ruten.com.tw/item/show?22642936164218",
+   "s": "[艾爾巴數位通訊] 高價收購手機筆電3C",
+   "src": "露天市集"
+  },
+  {
    "t": "【艾爾巴二手】iPhone 16 Pro 256G 6.3吋 白鈦 #二手機 #漢口店 1Y5YH",
    "p": 23500,
    "v": "iPhone 16 Pro",
@@ -819,18 +831,6 @@
    "i": "https://gcs.rimg.com.tw/g5/480/522/ruo1128/b/74/b7/22646159037623_277.png",
    "u": "https://www.ruten.com.tw/item/show?22646159037623",
    "s": "ruo1128的賣場",
-   "src": "露天市集"
-  },
-  {
-   "t": "【艾爾巴二手】iPhone 16 Pro 512GB A3293 6.3'' 白 #二手手機#桃園店9XP4G",
-   "p": 23600,
-   "v": "iPhone 16 Pro",
-   "c": "512GB",
-   "b": null,
-   "g": null,
-   "i": "https://gcs.rimg.com.tw/g4/3f7/78f/elbad0973/2/4f/7a/22642936164218_231.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22642936164218",
-   "s": "[艾爾巴數位通訊] 高價收購手機筆電3C",
    "src": "露天市集"
   },
   {
@@ -1263,6 +1263,18 @@
    "i": "https://gcs.rimg.com.tw/g2/f/4b/04/22606147754756_369.jpg",
    "u": "https://www.ruten.com.tw/item/show?22606147754756",
    "s": "【聯宏3C通信】",
+   "src": "露天市集"
+  },
+  {
+   "t": "【艾爾巴二手】iPhone 16 Pro Max 256G A3296 6.9吋 原鈦色 #二手手機#新興店FK6LM",
+   "p": 26500,
+   "v": "iPhone 16 Pro Max",
+   "c": "256GB",
+   "b": null,
+   "g": null,
+   "i": "https://gcs.rimg.com.tw/g4/3f7/78f/elbad0973/9/ef/a9/22643004821417_230.jpg",
+   "u": "https://www.ruten.com.tw/item/show?22643004821417",
+   "s": "[艾爾巴數位通訊] 高價收購手機筆電3C",
    "src": "露天市集"
   },
   {
@@ -1758,6 +1770,18 @@
    "src": "Smart3C"
   },
   {
+   "t": "【艾爾巴二手】iPhone 16 Pro Max 512G A3296 6.9吋 沙漠鈦 #二手手機#新興店2X797",
+   "p": 31500,
+   "v": "iPhone 16 Pro Max",
+   "c": "512GB",
+   "b": null,
+   "g": null,
+   "i": "https://gcs.rimg.com.tw/g4/3f7/78f/elbad0973/b/06/b5/22643004892853_537.jpg",
+   "u": "https://www.ruten.com.tw/item/show?22643004892853",
+   "s": "[艾爾巴數位通訊] 高價收購手機筆電3C",
+   "src": "露天市集"
+  },
+  {
    "t": "【原盒序】iPhone 16 Pro Max 512G 沙漠金 6.9吋 蘋果 二手機 實體店面 永和 Q0743",
    "p": 31700,
    "v": "iPhone 16 Pro Max",
@@ -1767,18 +1791,6 @@
    "i": "https://gcs.rimg.com.tw/g4/016/5ce/qq43102588/f/c8/9b/22641855965339_102.jpg",
    "u": "https://www.ruten.com.tw/item/show?22641855965339",
    "s": "phone富二手機專賣店",
-   "src": "露天市集"
-  },
-  {
-   "t": "【艾爾巴二手】iPhone 16 Pro Max 512G A3296 6.9吋 沙漠鈦 #二手手機#新興店2X797",
-   "p": 31800,
-   "v": "iPhone 16 Pro Max",
-   "c": "512GB",
-   "b": null,
-   "g": null,
-   "i": "https://gcs.rimg.com.tw/g4/3f7/78f/elbad0973/b/06/b5/22643004892853_537.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22643004892853",
-   "s": "[艾爾巴數位通訊] 高價收購手機筆電3C",
    "src": "露天市集"
   },
   {
