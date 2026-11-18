@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T10:15:47+08:00",
+ "updated": "2026-11-18T09:28:32+08:00",
  "benchmarks": {
   "iPhone 16": {
    "128GB": {
@@ -111,18 +111,6 @@
    "i": "https://gcs.rimg.com.tw/g5/482/3fe/sin_chih/7/34/8b/22646176584843_721.jpg",
    "u": "https://www.ruten.com.tw/item/show?22646176584843",
    "s": "炘馳通訊",
-   "src": "露天市集"
-  },
-  {
-   "t": "✨(星星通訊)二手 機況好漂亮🌹~Apple iPhone 16e 256G 白色 9成2新，實體門市最安心♥",
-   "p": 14000,
-   "v": "iPhone 16e",
-   "c": "256GB",
-   "b": null,
-   "g": "9.2成新",
-   "i": "https://gcs.rimg.com.tw/g2/8/b3/9c/22646167245724_219.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22646167245724",
-   "s": "星星通訊二手機專門店",
    "src": "露天市集"
   },
   {
@@ -411,18 +399,6 @@
    "i": "https://gcs.rimg.com.tw/g4/3f7/78f/elbad0973/c/94/6e/22643006043246_663.jpg",
    "u": "https://www.ruten.com.tw/item/show?22643006043246",
    "s": "[艾爾巴數位通訊] 高價收購手機筆電3C",
-   "src": "露天市集"
-  },
-  {
-   "t": "【樂曄通訊】二手9.8成新 Apple iPhone 16 512GB 白色 原機盒裝 外觀無傷 使用正常 健康度99%",
-   "p": 19500,
-   "v": "iPhone 16",
-   "c": "512GB",
-   "b": 99,
-   "g": "9.8成新",
-   "i": "https://gcs.rimg.com.tw/g1/b/e5/81/22645106296193_556.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22645106296193",
-   "s": "樂曄通訊 ⚡露天3C聯盟⚡",
    "src": "露天市集"
   },
   {
@@ -1074,6 +1050,18 @@
    "src": "露天市集"
   },
   {
+   "t": "【柏格納】iPhone 16 PRO MAX 256G 6.9吋 金#二手機#大里中興店02765",
+   "p": 24500,
+   "v": "iPhone 16 Pro Max",
+   "c": "256GB",
+   "b": null,
+   "g": null,
+   "i": "https://gcs.rimg.com.tw/g5/7c4/0a6/bergner/3/0c/66/22645123542118_385.jpg",
+   "u": "https://www.ruten.com.tw/item/show?22645123542118",
+   "s": "bergner的賣場",
+   "src": "露天市集"
+  },
+  {
    "t": "【福利品】Apple iPhone 16 512GB 6.1吋 (5G)",
    "p": 24500,
    "v": "iPhone 16",
@@ -1084,18 +1072,6 @@
    "u": "https://www.smart3c.com.tw/zh-hant/products/used-apple-iphone-16-512gb-61inch-5g",
    "s": "Smart3C",
    "src": "Smart3C"
-  },
-  {
-   "t": "【柏格納】iPhone 16 PRO MAX 256G 6.9吋 金#二手機#大里中興店02765",
-   "p": 25000,
-   "v": "iPhone 16 Pro Max",
-   "c": "256GB",
-   "b": null,
-   "g": null,
-   "i": "https://gcs.rimg.com.tw/g5/7c4/0a6/bergner/3/0c/66/22645123542118_385.jpg",
-   "u": "https://www.ruten.com.tw/item/show?22645123542118",
-   "s": "bergner的賣場",
-   "src": "露天市集"
   },
   {
    "t": "『澄橘』Apple iPhone 16 Pro Max 256G 256GB (6.9吋) 金 平輸《二手》A89215",
@@ -1878,18 +1854,6 @@
    "src": "保衛站"
   },
   {
-   "t": "iPhone 16 Pro 512G 金色 (B557-1730)",
-   "p": 31900,
-   "v": "iPhone 16 Pro",
-   "c": "512GB",
-   "b": null,
-   "g": null,
-   "i": "https://shoplineimg.com/632bfb2a2a56c80081edecb0/68f8aae18aa12d000a2f3a4f/375x.webp?source_format=jpeg",
-   "u": "https://www.guardstation.com.tw/products/iphone-16-pro-512g-金色-20260714",
-   "s": "保衛站",
-   "src": "保衛站"
-  },
-  {
    "t": "【邊框輕微使用痕】Apple iPhone 16 Pro Max 512GB 二手機 附充電組 實體店面 #C0971",
    "p": 32500,
    "v": "iPhone 16 Pro Max",
@@ -1962,5 +1926,7 @@
    "src": "Smart3C"
   }
  ],
- "errors": []
+ "errors": [
+  "SOGI: 405 Client Error: Not Allowed for url: https://www.sogi.com.tw/brands/Apple/116"
+ ]
 }
